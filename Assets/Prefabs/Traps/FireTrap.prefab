@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4653563693833014781}
   - component: {fileID: 696225648431797992}
   - component: {fileID: 4360982868306173208}
+  - component: {fileID: 4796831647372426012}
   m_Layer: 0
   m_Name: FireTrap
   m_TagString: Trap
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000000014901161, y: 0.27375102}
+  m_Offset: {x: 0.009901941, y: 0.46175468}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +134,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.644789, y: 0.8751645}
+  m_Size: {x: 0.8428296, y: 1.2962892}
   m_EdgeRadius: 0
 --- !u!114 &4360982868306173208
 MonoBehaviour:
@@ -149,3 +150,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burnDamage: 3
   burnDuration: 3
+--- !u!95 &4796831647372426012
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684697461443351075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a008eb19298f465459d2ebd70def6af3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

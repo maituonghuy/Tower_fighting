@@ -7,15 +7,35 @@ public class FireTrap : MonoBehaviour
     [SerializeField]
     public float burnDuration = 3f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private Animator anim;
+    private bool hasActivated = false;
+
+    private void Start()
     {
-        if (collision.CompareTag("Player"))
+        anim = GetComponent<Animator>();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!hasActivated && collision.CompareTag("Player"))
         {
+            hasActivated = true;
+            anim.SetTrigger("Activate");
+
             PlayerHealth player = collision.GetComponent<PlayerHealth>();
             if (player != null)
             {
                 player.ApplyBurn(burnDamage, burnDuration);
             }
+        }
+    }
+
+    //Lap lai Fire
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            hasActivated = false;
         }
     }
 }
