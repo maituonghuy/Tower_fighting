@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float currentHealth;
     [SerializeField] private float moveSpeed;
 
+    [Header("Combat")]
+    [SerializeField] private float baseDamage = 10f;  // damage gốc
+    private float currentDamage;
+
+
     private Rigidbody2D rb;
     private BoxCollider2D col;
 
@@ -225,10 +230,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void AddPassiveBuff(Buff buff)
+   private void AddPassiveBuff(Buff buff)
+{
+    passiveBuffs.Add(buff);
+
+    switch (buff.effectType)
     {
-        passiveBuffs.Add(buff);
+        case BuffEffectType.IncreaseMaxHealth:
+            maxHealth += buff.effectValue;
+            currentHealth += buff.effectValue; // có thể cộng ngay HP nếu muốn
+            break;
+
+        case BuffEffectType.IncreaseDamage:
+            baseDamage += buff.effectValue;
+            currentDamage = baseDamage;
+            break;
+
+        case BuffEffectType.IncreaseMoveSpeed:
+            moveSpeed += buff.effectValue;
+            break;
     }
+
+    Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
+}
+
 
     private void UseDashSkill()
     {
