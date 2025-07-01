@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player1TrapFire_0: -2740108136714575925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
