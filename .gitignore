@@ -151,3 +151,6 @@ azure-pipelines.yml
 # Temporary files
 *.tmp
 *.temp
+
+# Ignore Unity Editor Layout files
+*.dwlt
