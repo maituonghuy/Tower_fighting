@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
-    [SerializeField]
-    public float damage = 10f;
+    public TrapData trapData;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
+        if (player == null) return;
+
+        if (trapData.effectType == TrapEffectType.Damage)
         {
-            PlayerHealth player = collision.GetComponent<PlayerHealth>();
-            if (player != null)
-            {
-                player.TakeDamage(damage);
-            }
+            player.TakeDamage(trapData.value);
+            Debug.Log("Trap triggered: " + trapData.trapName);
         }
     }
 }

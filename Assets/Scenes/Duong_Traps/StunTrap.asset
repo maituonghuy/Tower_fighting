@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50a3a870a93f7fb41b0d502abc580650, type: 3}
-  m_Name: New Buff
+  m_Script: {fileID: 11500000, guid: 05321a3ae753cce4dab6ff8f1de4697a, type: 3}
+  m_Name: StunTrap
   m_EditorClassIdentifier: 
-  itemName: healthbuff
-  icon: {fileID: 4606908045521496030, guid: 37a6c720ff4f06a47aa368dd9463c645, type: 3}
-  Type: 1
-  duration: 5
-  effectValue: 1
+  trapName: StunTrap
+  icon: {fileID: -5817444672633405078, guid: f28b17cd7ce5ff94aa4d359fbe9f6be0, type: 3}
   effectType: 0
+  value: 0
+  duration: 3
+  tickInterval: 1

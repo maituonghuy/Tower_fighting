@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class StunTrap : MonoBehaviour
 {
-    public float stunDuration = 1.5f;
+    public TrapData trapData;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
+        if (player == null) return;
+
+        if (trapData.effectType == TrapEffectType.Stun)
         {
-            PlayerHealth player = collision.GetComponent<PlayerHealth>();
-            if (player != null)
-            {
-                player.ApplyStun(stunDuration);
-            }
+            player.ApplyStun(trapData.duration);
+            Debug.Log("Trap triggered: " + trapData.trapName);
         }
     }
 }
