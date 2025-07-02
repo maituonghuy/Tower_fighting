@@ -238,7 +238,6 @@ public class PlayerController : MonoBehaviour
     {
         case BuffEffectType.IncreaseMaxHealth:
             maxHealth += buff.effectValue;
-            currentHealth += buff.effectValue; // có thể cộng ngay HP nếu muốn
             break;
 
         case BuffEffectType.IncreaseDamage:
