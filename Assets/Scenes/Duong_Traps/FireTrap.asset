@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05321a3ae753cce4dab6ff8f1de4697a, type: 3}
+  m_Name: FireTrap
+  m_EditorClassIdentifier: 
+  trapName: FireTrap
+  icon: {fileID: -9130008681262292161, guid: 78503fe6ac1650348bbaaa8b3e42dc6a, type: 3}
+  effectType: 1
+  value: 5
+  duration: 15
+  tickInterval: 5
