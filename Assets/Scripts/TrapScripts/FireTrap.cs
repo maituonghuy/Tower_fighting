@@ -2,40 +2,19 @@ using UnityEngine;
 
 public class FireTrap : MonoBehaviour
 {
-    [SerializeField]
-    public float burnDamage = 3f;
-    [SerializeField]
-    public float burnDuration = 3f;
+    public TrapData trapData;
 
-    private Animator anim;
-    private bool hasActivated = false;
-
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        anim = GetComponent<Animator>();
-    }
+        if (!other.CompareTag("Player")) return;
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (!hasActivated && collision.CompareTag("Player"))
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
+        if (player == null) return;
+
+        if (trapData.effectType == TrapEffectType.Burn)
         {
-            hasActivated = true;
-            anim.SetTrigger("Activate");
-
-            PlayerHealth player = collision.GetComponent<PlayerHealth>();
-            if (player != null)
-            {
-                player.ApplyBurn(burnDamage, burnDuration);
-            }
-        }
-    }
-
-    //Lap lai Fire
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            hasActivated = false;
+            player.ApplyBurn(trapData.value, trapData.duration);
+            Debug.Log("Trap triggered: " + trapData.trapName);
         }
     }
 }
