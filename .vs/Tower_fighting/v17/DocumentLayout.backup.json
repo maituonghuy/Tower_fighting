@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\TowerFighting\\Tower_fighting\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\towerfighting\\tower_fighting\\assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\towerfighting\\tower_fighting\\assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -35,12 +39,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Buff.cs",
+              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T03:52:13.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Item.cs",
               "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Item.cs",
               "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
               "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Item.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T03:50:59.112Z",
               "EditorCaption": ""
