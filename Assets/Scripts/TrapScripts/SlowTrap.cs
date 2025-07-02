@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class SlowTrap : MonoBehaviour
 {
-    public float slowMultiplier = 0.5f;
-    public float duration = 3f;
+    public TrapData trapData;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
+        if (player == null) return;
+
+        if (trapData.effectType == TrapEffectType.Slow)
         {
-            PlayerHealth health = collision.GetComponent<PlayerHealth>();
-            if (health != null)
-            {
-                health.ApplySlow(slowMultiplier, duration);
-            }
+            player.ApplySlow(trapData.value, trapData.duration);
+            Debug.Log("Trap triggered: " + trapData.trapName);
         }
     }
 }

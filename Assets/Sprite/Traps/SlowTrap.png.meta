@@ -166,81 +166,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlowTrap_1
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 641
-        width: 114
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d75ed279f926b3f60800000000000000
-      internalID: 8015108399411619197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlowTrap_2
-      rect:
-        serializedVersion: 2
-        x: 575
-        y: 629
-        width: 130
-        height: 136
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5cb1a0147cae1e20800000000000000
-      internalID: 3323283189541223514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlowTrap_3
-      rect:
-        serializedVersion: 2
-        x: 839
-        y: 641
-        width: 122
-        height: 124
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30728f0db8bb5ced0800000000000000
-      internalID: -2394301417696778493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SlowTrap_4
       rect:
         serializedVersion: 2
         x: 8
-        y: 462
+        y: 467
         width: 233
-        height: 301
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 296
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,11 +192,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 279
-        y: 463
+        y: 466
         width: 211
-        height: 165
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 296
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -279,12 +213,12 @@ TextureImporter:
       name: SlowTrap_6
       rect:
         serializedVersion: 2
-        x: 535
-        y: 463
-        width: 216
-        height: 167
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 539
+        y: 466
+        width: 208
+        height: 296
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -301,12 +235,12 @@ TextureImporter:
       name: SlowTrap_7
       rect:
         serializedVersion: 2
-        x: 792
-        y: 463
-        width: 217
-        height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 795
+        y: 466
+        width: 210
+        height: 296
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -320,81 +254,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlowTrap_9
-      rect:
-        serializedVersion: 2
-        x: 825
-        y: 268
-        width: 152
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e42f4e7a85fbb0c20800000000000000
-      internalID: 3173840749907472974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlowTrap_12
-      rect:
-        serializedVersion: 2
-        x: 323
-        y: 250
-        width: 122
-        height: 127
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9ae0a4c8bf6a9ba0800000000000000
-      internalID: -6081425507446887779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlowTrap_20
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 95
-        width: 211
-        height: 162
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d40aae0e6cfdf2060800000000000000
-      internalID: 6931004396816474189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SlowTrap_22
       rect:
         serializedVersion: 2
         x: 791
         y: 95
         width: 217
-        height: 162
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

@@ -6,7 +6,8 @@ public enum BuffEffectType
 {
     IncreaseMaxHealth,
     IncreaseDamage,
-    IncreaseMoveSpeed
+    IncreaseMoveSpeed,
+    HealthRegen
     // Bạn có thể thêm: Giảm sát thương, Tăng hồi máu, v.v.
 }
 

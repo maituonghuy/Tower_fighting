@@ -154,9 +154,6 @@ azure-pipelines.yml
 
 # Ignore Unity Editor Layout files
 *.dwlt
-.vs/Tower_fighting/FileContentIndex/1251bf21-9d1a-4b3d-a49c-65e1a60e5042.vsidx
-.vs/Tower_fighting/FileContentIndex/39469d64-4944-48b2-a791-78654db250c4.vsidx
-.vs/Tower_fighting/FileContentIndex/3e204bd4-fb78-4bf1-a479-fe1783847816.vsidx
-.vs/Tower_fighting/FileContentIndex/5116b945-034a-4cd9-a0dd-40d4a6b4079a.vsidx
-.vs/Tower_fighting/FileContentIndex/d671650f-ddb9-4b19-bbb3-79b4af99b06c.vsidx
-.vs/Tower_fighting/v17/DocumentLayout.backup.json
+
+# Ignore Visual Studio index files
+*.vsidx
