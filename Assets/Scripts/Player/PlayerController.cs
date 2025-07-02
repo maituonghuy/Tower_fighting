@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
@@ -35,6 +37,14 @@ public class PlayerController : MonoBehaviour
     [Header("Buffs")]
     [SerializeField] private List<Buff> passiveBuffs; // Chỉ chứa buff passive
 
+    //Trap
+    [Header("Traps")]
+    [SerializeField] private List<TrapData> activeTrapEffects = new List<TrapData>();
+
+    private bool isStunned = false;
+    private bool isBurning = false;
+    private bool isSlowed = false;
+
     [Header("State")]
     [SerializeField] private bool isPvP = false;
     private bool isInvincible = false;
@@ -56,12 +66,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
+        if (!isStunned)
+            HandleMovement();
         HandleSkillInput();
     }
 
     private void HandleMovement()
     {
+        if (isStunned) return;
+
         float moveX = 0f;
 
         if (playerType == PlayerType.Player1)
@@ -150,12 +163,22 @@ public class PlayerController : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         if (isInvincible) return;
+
         currentHealth -= damage;
+        Debug.Log($"{playerType} bị mất {damage} máu → còn lại: {currentHealth}");
 
         if (currentHealth <= 0)
         {
             Die();
         }
+
+        isInvincible = true;
+        Invoke(nameof(ResetInvincibility), 1.5f);
+    }
+
+    private void ResetInvincibility()
+    {
+        isInvincible = false;
     }
 
     private void Die()
@@ -230,29 +253,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   private void AddPassiveBuff(Buff buff)
-{
-    passiveBuffs.Add(buff);
-
-    switch (buff.effectType)
+    private void AddPassiveBuff(Buff buff)
     {
-        case BuffEffectType.IncreaseMaxHealth:
-            maxHealth += buff.effectValue;
-            currentHealth += buff.effectValue; // có thể cộng ngay HP nếu muốn
-            break;
+        passiveBuffs.Add(buff);
 
-        case BuffEffectType.IncreaseDamage:
-            baseDamage += buff.effectValue;
-            currentDamage = baseDamage;
-            break;
+        switch (buff.effectType)
+        {
+            case BuffEffectType.IncreaseMaxHealth:
+                maxHealth += buff.effectValue;
+                currentHealth += buff.effectValue; // có thể cộng ngay HP nếu muốn
+                break;
 
-        case BuffEffectType.IncreaseMoveSpeed:
-            moveSpeed += buff.effectValue;
-            break;
+            case BuffEffectType.IncreaseDamage:
+                baseDamage += buff.effectValue;
+                currentDamage = baseDamage;
+                break;
+
+            case BuffEffectType.IncreaseMoveSpeed:
+                moveSpeed += buff.effectValue;
+                break;
+
+            case BuffEffectType.HealthRegen:
+                StartCoroutine(HealthRegenCoroutine(buff.effectValue, buff.duration));
+                break;
+        }
+
+        Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
     }
-
-    Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
-}
 
 
     private void UseDashSkill()
@@ -268,4 +295,116 @@ public class PlayerController : MonoBehaviour
     }
 
     public PlayerType GetPlayerType() => playerType;
+
+    public void ApplyTrapEffect(TrapData trapData)
+    {
+        if (!activeTrapEffects.Contains(trapData))
+            activeTrapEffects.Add(trapData);
+
+        switch (trapData.effectType)
+        {
+            case TrapEffectType.Damage:
+                ApplyDamage(trapData.value);
+                break;
+            case TrapEffectType.Burn:
+                ApplyBurn(trapData.value, trapData.duration, trapData);
+                break;
+
+            case TrapEffectType.Stun:
+                ApplyStun(trapData.duration, trapData);
+                break;
+
+            case TrapEffectType.Slow:
+                ApplySlow(trapData.value, trapData.duration, trapData);
+                break;
+            case TrapEffectType.Push:
+                rb.linearVelocity = Vector2.up * trapData.value;
+                break;
+        }
+    }
+
+    private void ApplySlow(float value, float duration, TrapData trapData)
+    {
+        if (isSlowed) return;
+
+        StartCoroutine(SlowCoroutine(value, duration, trapData));
+    }
+
+    private IEnumerator SlowCoroutine(float value, float duration, TrapData trapData)
+    {
+        isSlowed = true;
+        float originalSpeed = moveSpeed;
+        moveSpeed *= value;
+
+        yield return new WaitForSeconds(duration);
+
+        moveSpeed = originalSpeed;
+        isSlowed = false;
+        activeTrapEffects.Remove(trapData);
+    }
+
+    private void ApplyBurn(float value, float duration, TrapData trapData)
+    {
+        if (isBurning) return;
+
+        StartCoroutine(BurnCoroutine(value, duration, trapData));
+    }
+
+
+    private IEnumerator BurnCoroutine(float damagePerTick, float totalDuration, TrapData trapData)
+    {
+        isBurning = true;
+        float tickInterval = 1f;
+        float timer = totalDuration;
+
+        while (timer > 0)
+        {
+            ApplyDamage(damagePerTick);
+            yield return new WaitForSeconds(tickInterval);
+            timer -= tickInterval;
+        }
+
+        isBurning = false;
+        activeTrapEffects.Remove(trapData);
+    }
+
+    private void ApplyStun(float duration, TrapData trapData)
+    {
+        if (isStunned) return;
+
+        StartCoroutine(StunCoroutine(duration, trapData));
+    }
+
+
+    private IEnumerator StunCoroutine(float duration, TrapData trapData)
+    {
+        isStunned = true;
+        float originalSpeed = moveSpeed;
+        moveSpeed = 0;
+
+        yield return new WaitForSeconds(duration);
+
+        moveSpeed = originalSpeed;
+        isStunned = false;
+        activeTrapEffects.Remove(trapData);
+    }
+
+    private IEnumerator HealthRegenCoroutine(float healPerSecond, float duration)
+    {
+        float timer = 0f;
+        float interval = 1f; // hồi máu mỗi giây
+
+        while (timer < duration)
+        {
+            currentHealth += healPerSecond;
+            currentHealth = Mathf.Min(currentHealth, maxHealth); // không vượt quá max
+
+            Debug.Log($"{playerType} hồi {healPerSecond} máu. Máu hiện tại: {currentHealth}");
+
+            yield return new WaitForSeconds(interval);
+            timer += interval;
+        }
+    }
+
+
 }
