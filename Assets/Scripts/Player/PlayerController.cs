@@ -55,6 +55,15 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float jumpForce = 300f;
 
+    //Buff Active hút máu
+    private bool isLifeStealing = false;
+    private float lifeStealPercent = 0f;
+
+    //shield Active
+    private float damageReductionPercent = 0f;
+
+    //UI
+    public UIController itemUI;
 
     void Start()
     {
@@ -62,6 +71,11 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         animationController = GetComponent<PlayerAnimationController>();
         currentHealth = maxHealth;
+
+        while (itemSlots.Count < 3)
+        {
+            itemSlots.Add(null);
+        }
     }
 
     void Update()
@@ -157,15 +171,25 @@ public class PlayerController : MonoBehaviour
 
     public void UseItem(int index)
     {
-        // Kích hoạt item tại ô slot index (buff active hoặc weapon attack)
+        if (index < 0 || index >= itemSlots.Count) return;
+
+        Item item = itemSlots[index];
+        item.Activate(this);
+
+        if (item is Buff buff && buff.Type == BuffType.Active)
+        {
+            itemSlots[index] = null; // vẫn giữ slot, nhưng trống
+            if (itemUI != null)
+                itemUI.ClearItemSlot(index);
+        }
     }
 
     public void ApplyDamage(float damage)
     {
         if (isInvincible) return;
 
-        currentHealth -= damage;
-        Debug.Log($"{playerType} bị mất {damage} máu → còn lại: {currentHealth}");
+        float actualDamage = damage * (1f - damageReductionPercent);
+        currentHealth -= actualDamage;
 
         if (currentHealth <= 0)
         {
@@ -188,10 +212,19 @@ public class PlayerController : MonoBehaviour
 
     public void AddItem(Item newItem)
     {
-        if (itemSlots.Count >= 3) return;
+        for (int i = 0; i < itemSlots.Count; i++)
+        {
+            if (itemSlots[i] == null)
+            {
+                itemSlots[i] = newItem;
+                if (itemUI != null)
+                    itemUI.SetItemIcon(i, newItem.icon);
+                return;
+            }
+        }
 
-        itemSlots.Add(newItem);
-        // Cập nhật UI nếu có
+        // Nếu tất cả slot đều đang full → không thêm được
+        Debug.Log($"{playerType}: Không còn slot trống để thêm item.");
     }
 
     public void SetPvPMode(bool value)
@@ -406,5 +439,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
+
+    public void ActivateLifeSteal(float percent, float duration)
+    {
+        if (isLifeStealing) return;
+
+        StartCoroutine(LifeStealCoroutine(percent, duration));
+    }
+
+    private IEnumerator LifeStealCoroutine(float percent, float duration)
+    {
+        isLifeStealing = true;
+        lifeStealPercent = percent;
+
+        yield return new WaitForSeconds(duration);
+
+        isLifeStealing = false;
+        lifeStealPercent = 0f;
+    }
+
+    public void ActivateShield(float percent, float duration)
+    {
+        StartCoroutine(ShieldCoroutine(percent, duration));
+    }
+
+    private IEnumerator ShieldCoroutine(float percent, float duration)
+    {
+        damageReductionPercent = percent;
+
+        yield return new WaitForSeconds(duration);
+
+        damageReductionPercent = 0f;
+    }
 
 }
