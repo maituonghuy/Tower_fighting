@@ -49,6 +49,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isPvP = false;
     private bool isInvincible = false;
 
+    [SerializeField] private Transform weaponHolder;
+    private GameObject currentWeapon;
+    private int equippedItemIndex = -1; // -1 nghĩa là không cầm gì
+
+    [SerializeField] private GameObject bulletPrefab;
+
+
+
     private PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
@@ -174,15 +182,43 @@ public class PlayerController : MonoBehaviour
         if (index < 0 || index >= itemSlots.Count) return;
 
         Item item = itemSlots[index];
-        item.Activate(this);
+        if (item == null) return;
 
-        if (item is Buff buff && buff.Type == BuffType.Active)
+        // Nếu đang cầm chính item này → bỏ xuống
+        if (equippedItemIndex == index)
         {
-            itemSlots[index] = null; // vẫn giữ slot, nhưng trống
+            UnequipWeapon(); // Xóa vũ khí khỏi tay
+            equippedItemIndex = -1;
+            return;
+        }
+
+        // Nếu là Weapon → trang bị
+        if (item is Weapon weapon)
+        {
+            EquipWeapon(weapon);
+            equippedItemIndex = index;
+        }
+        else if (item is Buff buff && buff.Type == BuffType.Active)
+        {
+            item.Activate(this); // Dùng buff
+
+            itemSlots[index] = null; // Dùng xong thì mất
             if (itemUI != null)
                 itemUI.ClearItemSlot(index);
+
+            equippedItemIndex = -1;
         }
     }
+
+    private void UnequipWeapon()
+    {
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon);
+            currentWeapon = null;
+        }
+    }
+
 
     public void ApplyDamage(float damage)
     {
@@ -210,7 +246,7 @@ public class PlayerController : MonoBehaviour
         //GameManager.Instance.OnPlayerDead(playerType);
     }
 
-    public void AddItem(Item newItem)
+    public bool AddItem(Item newItem)
     {
         for (int i = 0; i < itemSlots.Count; i++)
         {
@@ -219,12 +255,13 @@ public class PlayerController : MonoBehaviour
                 itemSlots[i] = newItem;
                 if (itemUI != null)
                     itemUI.SetItemIcon(i, newItem.icon);
-                return;
+                return true;
             }
         }
 
         // Nếu tất cả slot đều đang full → không thêm được
         Debug.Log($"{playerType}: Không còn slot trống để thêm item.");
+        return false;
     }
 
     public void SetPvPMode(bool value)
@@ -250,10 +287,48 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        // Nếu có vũ khí đang chọn → gọi Activate()
-        // Nếu không → chơi animation đánh tay không
-        animationController.PlayAttackAnimation();
+        if (currentWeapon != null)
+        {
+            Weapon weapon = itemSlots[equippedItemIndex] as Weapon;
+
+            Animator weaponAnimator = currentWeapon.GetComponent<Animator>();
+            if (weaponAnimator != null && weapon != null && !string.IsNullOrEmpty(weapon.weaponAnimatorTrigger))
+            {
+                weaponAnimator.SetTrigger(weapon.weaponAnimatorTrigger);
+            }
+
+            // Nếu là súng thì bắn
+            if (weapon.name.Contains("Gun"))
+            {
+                FireBullet(weapon);
+            }
+            else
+            {
+                weapon.Activate(this);
+            }
+        }
+        else
+        {
+            animationController.PlayAttackAnimation();
+        }
+
         Debug.Log($"{playerType} attacked!");
+    }
+
+    private void FireBullet(Weapon weapon)
+    {
+        if (bulletPrefab == null) return;
+
+        Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+
+        // Tìm điểm bắn từ trong vũ khí đang cầm
+        Transform shootPoint = currentWeapon.transform.Find("ShootPoint");
+
+        Vector3 spawnPos = shootPoint != null ? shootPoint.position : weaponHolder.position;
+
+        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        bullet.GetComponent<Bullet>().SetDirection(direction);
+
     }
 
     private void TryPickUp()
@@ -263,9 +338,11 @@ public class PlayerController : MonoBehaviour
         if (nearbyItem.CompareTag("weapon"))
         {
             Weapon weapon = nearbyItem.GetComponent<WeaponPickup>().GetWeapon();
-            AddItem(weapon);
-            Destroy(nearbyItem);
-            nearbyItem = null;
+            if (AddItem(weapon)) // chỉ xóa nếu nhặt thành công
+            {
+                Destroy(nearbyItem);
+                nearbyItem = null;
+            }
         }
         else if (nearbyItem.CompareTag("buff"))
         {
@@ -273,18 +350,21 @@ public class PlayerController : MonoBehaviour
 
             if (buff.Type == BuffType.Passive)
             {
-                AddPassiveBuff(buff); // nếu có hệ thống passive buff
-
+                AddPassiveBuff(buff);
+                Destroy(nearbyItem);
+                nearbyItem = null;
             }
             else
             {
-                AddItem(buff); // nếu là buff active
+                if (AddItem(buff)) //chỉ xóa nếu nhặt thành công
+                {
+                    Destroy(nearbyItem);
+                    nearbyItem = null;
+                }
             }
-
-            Destroy(nearbyItem);
-            nearbyItem = null;
         }
     }
+
 
     private void AddPassiveBuff(Buff buff)
     {
@@ -325,6 +405,26 @@ public class PlayerController : MonoBehaviour
     {
         // Gọi skill riêng (tùy theo prefab hoặc skin)
         Debug.Log($"{playerType} used Unique Skill!");
+    }
+
+    public void EquipWeapon(Weapon weapon)
+    {
+
+        // Xóa vũ khí cũ nếu có
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon);
+        }
+
+        if (weapon != null && weapon.weaponPrefab != null)
+        {
+            // Tạo vũ khí mới tại vị trí WeaponHolder
+            currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
+            currentWeapon.transform.localScale = Vector3.one;
+            currentWeapon.transform.localScale *= 3f;
+            currentWeapon.transform.localPosition = Vector3.zero;
+        }
+
     }
 
     public PlayerType GetPlayerType() => playerType;

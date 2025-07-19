@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Nunchaku
   m_EditorClassIdentifier: 
   itemName: Nunchaku
-  icon: {fileID: 0}
+  icon: {fileID: 6919366548538155999, guid: 843529b66e3dfde4098f6beb3b14a34c, type: 3}
   damage: 10
