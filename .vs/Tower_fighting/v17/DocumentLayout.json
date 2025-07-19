@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\ProjectPRU\\Tower_fighting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\itemscripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\buffpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 207,
+          "SelectedChildIndex": 209,
           "Children": [
             {
               "$type": "Bookmark",
@@ -866,45 +870,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T13:52:04.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Weapon.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
               "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
               "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T15:19:07.323Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
               "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ViewState": "AgIAAGYBAAAAAAAAAAAQwIUBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJQBAAAAAAAAAAAAAKYBAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-02T04:05:31.817Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerAnimationController.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T15:42:06.614Z"
+              "WhenOpened": "2025-07-07T15:42:06.614Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "WeaponPickup.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
@@ -912,11 +930,12 @@
               "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T15:19:10.493Z"
+              "WhenOpened": "2025-07-07T15:19:10.493Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "BuffPickup.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
@@ -928,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Buff.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Buff.cs",

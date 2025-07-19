@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Gun
   m_EditorClassIdentifier: 
   itemName: Gun
-  icon: {fileID: 2196975100302409650, guid: 8770455254c54154584eea371862e232, type: 3}
+  icon: {fileID: 4565813657897213748, guid: 1985637c691435e4786c22e59feb302e, type: 3}
   damage: 10
-  weaponPrefab: {fileID: 0}
-  weaponAnimatorTrigger: 
+  weaponPrefab: {fileID: 7567002669326963354, guid: 90522961e2ea516468726be908c6fe55, type: 3}
+  weaponAnimatorTrigger: Shoot
+  shootPoint: {fileID: 0}
