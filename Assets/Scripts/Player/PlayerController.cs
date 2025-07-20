@@ -57,13 +57,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private PlayerAnimationController animationController;
+    protected PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
 
     [SerializeField] private float jumpForce = 350f;
 
     private bool isGrounded = false;
+    private bool isStunnedByAttack = false;
 
     //Buff Active hút máu
     private bool isLifeStealing = false;
@@ -85,6 +86,9 @@ public class PlayerController : MonoBehaviour
     // Speed modifier system
     private Dictionary<string, float> speedModifiers = new Dictionary<string, float>();
     private float baseSpeed;
+
+    [SerializeField] private float stunDuration = 0.4f;
+
 
 
     void Start()
@@ -117,7 +121,7 @@ public class PlayerController : MonoBehaviour
         speedModifiers.Clear();
     }
 
-    private void HandleMovement()
+    protected virtual void HandleMovement()
     {
         if (isStunned || isStunnedByAttack) return;
 
@@ -368,7 +372,7 @@ public class PlayerController : MonoBehaviour
             bulletScript.SetOwner(this, weapon.damage);
         }
 
-        }
+    }
 
     private void TryPickUp()
     {
@@ -408,29 +412,29 @@ public class PlayerController : MonoBehaviour
     private void AddPassiveBuff(Buff buff)
     {
         switch (buff.effectType)
-            {
-                case BuffEffectType.IncreaseMaxHealth:
-                    maxHealth += buff.effectValue;
-                    break;
+        {
+            case BuffEffectType.IncreaseMaxHealth:
+                maxHealth += buff.effectValue;
+                break;
 
-                case BuffEffectType.IncreaseDamage:
-                    baseDamage += buff.effectValue;
-                    currentDamage = baseDamage;
-                    break;
+            case BuffEffectType.IncreaseDamage:
+                baseDamage += buff.effectValue;
+                currentDamage = baseDamage;
+                break;
 
-                case BuffEffectType.IncreaseMoveSpeed:
-                    moveSpeed += buff.effectValue;
-                    break;
+            case BuffEffectType.IncreaseMoveSpeed:
+                moveSpeed += buff.effectValue;
+                break;
 
-                case BuffEffectType.HealthRegen:
-                    StartCoroutine(HealthRegenCoroutine(buff.effectValue, buff.duration));
-                    break;
-            }
+            case BuffEffectType.HealthRegen:
+                StartCoroutine(HealthRegenCoroutine(buff.effectValue, buff.duration));
+                break;
+        }
 
         Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
     }
-        
-    
+
+
 
     private void UseDashSkill()
     {
@@ -490,7 +494,7 @@ public class PlayerController : MonoBehaviour
 
     public PlayerType GetPlayerType() => playerType;
 
-    
+
 
     public void ApplyTrapEffect(TrapData trapData)
     {
@@ -608,7 +612,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetInvincible(bool value)
     {
-        isInvincible = value;
+        //isInvincible = value;
     }
 
 
@@ -679,6 +683,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
     private void RecalculateSpeed()
     {
         float newSpeed = baseSpeed;
@@ -708,7 +713,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator StunCoroutineByAttack(float duration)
     {
         isStunnedByAttack = true;
-        animationController.PlayStunAnimation(); 
+        animationController.PlayStunAnimation();
 
         yield return new WaitForSeconds(duration);
 
