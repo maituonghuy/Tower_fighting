@@ -255,8 +255,19 @@ public class PlayerController : MonoBehaviour
 
     private void AddPassiveBuff(Buff buff)
     {
-        passiveBuffs.Add(buff);
+        case BuffEffectType.IncreaseMaxHealth:
+            maxHealth += buff.effectValue;
+            break;
 
+        case BuffEffectType.IncreaseDamage:
+            baseDamage += buff.effectValue;
+            currentDamage = baseDamage;
+            break;
+
+        case BuffEffectType.IncreaseMoveSpeed:
+            moveSpeed += buff.effectValue;
+            break;
+    }
         switch (buff.effectType)
         {
             case BuffEffectType.IncreaseMaxHealth:
