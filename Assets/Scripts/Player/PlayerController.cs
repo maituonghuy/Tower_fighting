@@ -61,9 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private GameObject nearbyItem = null;
 
-    [SerializeField] private float jumpForce = 350f;
-
-    private bool isGrounded = false;
+    [SerializeField] private float jumpForce = 300f;
 
     //Buff Active hút máu
     private bool isLifeStealing = false;
@@ -187,8 +185,6 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (!isGrounded) return;
-
         // Chỉ nhảy nếu đang chạm đất (tuỳ bạn muốn kiểm tra bằng Raycast hay Trigger)
         animationController.PlayJumpAnimation();
         rb.AddForce(Vector2.up * jumpForce);
@@ -401,29 +397,28 @@ public class PlayerController : MonoBehaviour
     private void AddPassiveBuff(Buff buff)
     {
         switch (buff.effectType)
-            {
-                case BuffEffectType.IncreaseMaxHealth:
-                    maxHealth += buff.effectValue;
-                    break;
+        {
+            case BuffEffectType.IncreaseMaxHealth:
+                maxHealth += buff.effectValue;
+                currentHealth += buff.effectValue; // có thể cộng ngay HP nếu muốn
+                break;
 
-                case BuffEffectType.IncreaseDamage:
-                    baseDamage += buff.effectValue;
-                    currentDamage = baseDamage;
-                    break;
+            case BuffEffectType.IncreaseDamage:
+                baseDamage += buff.effectValue;
+                currentDamage = baseDamage;
+                break;
 
-                case BuffEffectType.IncreaseMoveSpeed:
-                    moveSpeed += buff.effectValue;
-                    break;
+            case BuffEffectType.IncreaseMoveSpeed:
+                moveSpeed += buff.effectValue;
+                break;
 
-                case BuffEffectType.HealthRegen:
-                    StartCoroutine(HealthRegenCoroutine(buff.effectValue, buff.duration));
-                    break;
-            }
+            case BuffEffectType.HealthRegen:
+                StartCoroutine(HealthRegenCoroutine(buff.effectValue, buff.duration));
+                break;
+        }
 
         Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
     }
-        
-    
 
     private void UseDashSkill()
     {
@@ -658,20 +653,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
     private void RecalculateSpeed()
     {
         float newSpeed = baseSpeed;
