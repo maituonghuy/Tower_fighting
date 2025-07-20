@@ -87,7 +87,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.08, y: 4.27}
+  m_Size: {x: 1.4666667, y: 2.0333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -154,17 +154,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.04203832, y: 0.18917239}
+  m_Offset: {x: 0.04203832, y: -0.13464308}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.4666667, y: 2.0333333}
-    newSize: {x: 3.08, y: 4.27}
+    newSize: {x: 1.4666667, y: 2.0333333}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.188277, y: 0.7387841}
+  m_Size: {x: 1.188277, y: 0.81074286}
   m_EdgeRadius: 0
 --- !u!114 &1030273225231994736
 MonoBehaviour:
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 1
-  maxHealth: 200
-  currentHealth: 200
+  maxHealth: 250
+  currentHealth: 250
   moveSpeed: 9
   baseDamage: 14
   dashSkill: {fileID: 0}
@@ -223,7 +223,13 @@ MonoBehaviour:
   passiveBuffs: []
   activeTrapEffects: []
   isPvP: 0
+  weaponHolder: {fileID: 0}
+  bulletPrefab: {fileID: 0}
   jumpForce: 350
+  itemUI: {fileID: 0}
+  dashForce: 50
+  dashDuration: 0.2
+  dashCooldown: 1
   stunDuration: 0.4
   fireballPrefab: {fileID: 3363001410986266074, guid: c00ddc37d57ffaf428b230a3bcab69cf, type: 3}
   firePoint: {fileID: 2783761532832151559}

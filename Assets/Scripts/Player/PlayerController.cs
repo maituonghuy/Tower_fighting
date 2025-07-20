@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("State")]
     [SerializeField] private bool isPvP = false;
-    //private bool isInvincible = false;
+    private bool isInvincible = false;
 
     [SerializeField] private Transform weaponHolder;
     private GameObject currentWeapon;
@@ -193,6 +193,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (!isGrounded) return;
+
         // Chỉ nhảy nếu đang chạm đất (tuỳ bạn muốn kiểm tra bằng Raycast hay Trigger)
         animationController.PlayJumpAnimation();
         rb.AddForce(Vector2.up * jumpForce);
@@ -252,13 +254,10 @@ public class PlayerController : MonoBehaviour
     public void ApplyDamage(float damage)
     {
 
+        if (isInvincible) return;
+
         float actualDamage = damage * (1f - damageReductionPercent);
         currentHealth -= actualDamage;
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
 
         if (currentHealth <= 0)
         {
@@ -267,12 +266,15 @@ public class PlayerController : MonoBehaviour
         }
 
         StartCoroutine(StunCoroutineByAttack(stunDuration));
+        isInvincible = true;
+        Invoke(nameof(ResetInvincibility), 0.4f);
+        
 
     }
 
     private void ResetInvincibility()
     {
-        //isInvincible = false;
+        isInvincible = false;
     }
 
     private void Die()
@@ -341,11 +343,6 @@ public class PlayerController : MonoBehaviour
                 weapon.Activate(this);
             }
         }
-        else
-        {
-            animationController.PlayAttackAnimation();
-        }
-
         Debug.Log($"{playerType} attacked!");
     }
 
@@ -374,7 +371,7 @@ public class PlayerController : MonoBehaviour
 
     private void TryPickUp()
     {
-        if (nearbyItem == null) return;
+        if (nearbyItem == null || gameObject.CompareTag("dragon")) return;
 
         if (nearbyItem.CompareTag("weapon"))
         {
