@@ -493,7 +493,7 @@ public class PlayerController : MonoBehaviour
         {
             // Tạo vũ khí mới tại vị trí WeaponHolder
             currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
-            currentWeapon.transform.localScale = Vector3.one * 5f;
+            currentWeapon.transform.localScale = Vector3.one * 3f;
             currentWeapon.transform.localPosition = Vector3.zero;
 
             WeaponHitbox hitbox = currentWeapon.GetComponentInChildren<WeaponHitbox>();

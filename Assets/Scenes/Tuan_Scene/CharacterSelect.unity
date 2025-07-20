@@ -2053,25 +2053,25 @@ MonoBehaviour:
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -5794280630382045305, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 5464313582402559555, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
   - characterName: Scarlet
     characterSprite: {fileID: 5351708609430724204, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -3087880778217750092, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 2305107698038166677, guid: 96bd37b09d1639344adbaca1775732d1, type: 3}
   - characterName: Shadow
     characterSprite: {fileID: 6494218633340668182, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 875946876819185120, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
   - characterName: Frosty
     characterSprite: {fileID: -7517256858135843231, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: -8761483511772326392, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 1653168936209191005, guid: e383b9030bfacf746989cb825ed023b3, type: 3}
   displayCharacterImage: {fileID: 1388129573}
   skillImages:
   - {fileID: 371193689}
@@ -2262,25 +2262,25 @@ MonoBehaviour:
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -2703249703063247693, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 5464313582402559555, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
   - characterName: Scarlet
     characterSprite: {fileID: -3150131467861657401, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 5351708609430724204, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: -7390066592427920868, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 2305107698038166677, guid: 96bd37b09d1639344adbaca1775732d1, type: 3}
   - characterName: Shadow
     characterSprite: {fileID: -3172869925008137835, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: -5422976349051264599, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: 1980740879560390139, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
   - characterName: Frosty
     characterSprite: {fileID: -3087880778217750092, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -9072972012384533964, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
-    characterPrefab: {fileID: 0}
+    characterPrefab: {fileID: 1653168936209191005, guid: e383b9030bfacf746989cb825ed023b3, type: 3}
   - characterName: 
     characterSprite: {fileID: 0}
     skillSprites: []
@@ -4069,12 +4069,12 @@ MonoBehaviour:
     characterName: 
     characterSprite: {fileID: 0}
     skillSprites: []
-    characterPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
+    characterPrefab: {fileID: 0}
   player2Character:
     characterName: 
     characterSprite: {fileID: 0}
     skillSprites: []
-    characterPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
+    characterPrefab: {fileID: 0}
 --- !u!4 &1484525118
 Transform:
   m_ObjectHideFlags: 0
@@ -5223,6 +5223,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845876740}
   m_CullTransparentMesh: 1
+--- !u!1001 &1854459105
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31486239463846732, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464313582402559555, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_Name
+      value: CountrysideBoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799390201281562006, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f48fd4dd59c360341b1da226cc9eed2f, type: 3}
 --- !u!1 &1863334891
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,3 +5745,4 @@ SceneRoots:
   - {fileID: 755083032}
   - {fileID: 695960252}
   - {fileID: 1484525118}
+  - {fileID: 1854459105}
