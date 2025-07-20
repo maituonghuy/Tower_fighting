@@ -47,15 +47,18 @@ public class PlayerController : MonoBehaviour
 
     [Header("State")]
     [SerializeField] private bool isPvP = false;
-    private bool isInvincible = false;
+    //private bool isInvincible = false;
 
-    private PlayerAnimationController animationController;
+    protected PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
 
     [SerializeField] private float jumpForce = 350f;
 
     private bool isGrounded = false;
+
+    private bool isStunnedByAttack = false;
+    [SerializeField] private float stunDuration = 0.4f; 
 
 
     void Start()
@@ -68,14 +71,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isStunned)
+        if (!isStunnedByAttack)
+        {
             HandleMovement();
-        HandleSkillInput();
+            HandleSkillInput();
+        }
     }
 
-    private void HandleMovement()
+    protected virtual void HandleMovement()
     {
-        if (isStunned) return;
+        if (isStunned || isStunnedByAttack) return;
 
         float moveX = 0f;
 
@@ -166,7 +171,6 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        if (isInvincible) return;
 
         currentHealth -= damage;
         Debug.Log($"{playerType} bị mất {damage} máu → còn lại: {currentHealth}");
@@ -176,13 +180,19 @@ public class PlayerController : MonoBehaviour
             Die();
         }
 
-        isInvincible = true;
-        Invoke(nameof(ResetInvincibility), 1.5f);
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+
+        StartCoroutine(StunCoroutineByAttack(stunDuration));
+
     }
 
     private void ResetInvincibility()
     {
-        isInvincible = false;
+        //isInvincible = false;
     }
 
     private void Die()
@@ -219,11 +229,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
-        // Nếu có vũ khí đang chọn → gọi Activate()
-        // Nếu không → chơi animation đánh tay không
-        animationController.PlayAttackAnimation();
         Debug.Log($"{playerType} attacked!");
     }
 
@@ -424,4 +431,17 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private IEnumerator StunCoroutineByAttack(float duration)
+    {
+        isStunnedByAttack = true;
+        animationController.PlayStunAnimation(); 
+
+        yield return new WaitForSeconds(duration);
+
+        isStunnedByAttack = false;
+    }
+
+
+
 }
