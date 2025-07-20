@@ -28,12 +28,12 @@ public class SkillExecutor : MonoBehaviour
         // Check if we have skills available
         if (skills == null || skills.Count == 0) return;
 
-        //Special skill (Time-Slow Bubble)
+        //Special skill (Time-Slow Bubble or Fire Stream - depends on what's assigned)
         if (UnityEngine.InputSystem.Keyboard.current.eKey.wasReleasedThisFrame && skills.Count > 0 && !isOnCoolDown(skills[0]))
         {
-            Debug.Log("Pre Activate skill");
+            Debug.Log("Pre Activate special skill");
             skills[0].Activate(player, this);
-            Debug.Log("Activate skill");
+            Debug.Log("Activate special skill");
         }
         
         //Cancel special skill
@@ -43,12 +43,20 @@ public class SkillExecutor : MonoBehaviour
             skills[0].Cancel(player, this);
         }
 
-        // Dash skill (if you have a second skill)
+        // Secondary skill (Dash, Teleport, etc. - depends on what's assigned)
         if (UnityEngine.InputSystem.Keyboard.current.cKey.wasPressedThisFrame && skills.Count > 1 && !isOnCoolDown(skills[1]))
         {
-            Debug.Log("Pre Activate Dash skill");
+            Debug.Log("Pre Activate secondary skill");
             skills[1].Activate(player, this);
-            Debug.Log("Activate Dash skill");
+            Debug.Log("Activate secondary skill");
+        }
+
+        // Third skill slot (if needed)
+        if (UnityEngine.InputSystem.Keyboard.current.rKey.wasPressedThisFrame && skills.Count > 2 && !isOnCoolDown(skills[2]))
+        {
+            Debug.Log("Pre Activate third skill");
+            skills[2].Activate(player, this);
+            Debug.Log("Activate third skill");
         }
     }
     public void StartCooldown(Skill skill)

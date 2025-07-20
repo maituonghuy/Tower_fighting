@@ -49,31 +49,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isPvP = false;
     private bool isInvincible = false;
 
-    [SerializeField] private Transform weaponHolder;
-    private GameObject currentWeapon;
-    private int equippedItemIndex = -1; // -1 nghĩa là không cầm gì
-
-    [SerializeField] private GameObject bulletPrefab;
-
-
-
     private PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
 
     [SerializeField] private float jumpForce = 300f;
 
-    //Buff Active hút máu
-    private bool isLifeStealing = false;
-    private float lifeStealPercent = 0f;
-
-    //shield Active
-    private float damageReductionPercent = 0f;
-
-    //UI
-    public UIController itemUI;
     [Header("Dash Settings")]
-    [SerializeField] private float dashForce = 50f;
+    [SerializeField] private float dashForce = 1000f;
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
     private bool isDashing = false;
@@ -83,6 +66,9 @@ public class PlayerController : MonoBehaviour
     private Dictionary<string, float> speedModifiers = new Dictionary<string, float>();
     private float baseSpeed;
 
+    // Fire Stream settings
+    private bool canDash = true;
+
 
     void Start()
     {
@@ -90,11 +76,6 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         animationController = GetComponent<PlayerAnimationController>();
         currentHealth = maxHealth;
-
-        while (itemSlots.Count < 3)
-        {
-            itemSlots.Add(null);
-        }
 
         InitializeSpeedManager();
     }
@@ -167,7 +148,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha3)) UseItem(1);
             if (Input.GetKeyDown(KeyCode.Alpha4)) UseItem(2);
             if (Input.GetKeyDown(KeyCode.S)) TryPickUp();
-            if (UnityEngine.InputSystem.Keyboard.current.zKey.wasReleasedThisFrame) UseDashSkill();      // Dash: 5
+            if (UnityEngine.InputSystem.Keyboard.current.lKey.wasReleasedThisFrame) UseDashSkill();      // Dash: 5
             if (Input.GetKeyDown(KeyCode.Alpha6)) UseUniqueSkill();    // Unique: 6
         }
         else if (playerType == PlayerType.Player2)
@@ -177,7 +158,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M)) UseItem(1);
             if (Input.GetKeyDown(KeyCode.Comma)) UseItem(2);
             if (Input.GetKeyDown(KeyCode.DownArrow)) TryPickUp();
-            if (UnityEngine.InputSystem.Keyboard.current.mKey.wasReleasedThisFrame) UseDashSkill();      // Dash: .
+            if (Input.GetKeyDown(KeyCode.L)) UseDashSkill();      // Dash: .
             if (Input.GetKeyDown(KeyCode.Slash)) UseUniqueSkill();     // Unique: /
         }
     }
@@ -199,53 +180,15 @@ public class PlayerController : MonoBehaviour
 
     public void UseItem(int index)
     {
-        if (index < 0 || index >= itemSlots.Count) return;
-
-        Item item = itemSlots[index];
-        if (item == null) return;
-
-        // Nếu đang cầm chính item này → bỏ xuống
-        if (equippedItemIndex == index)
-        {
-            UnequipWeapon(); // Xóa vũ khí khỏi tay
-            equippedItemIndex = -1;
-            return;
-        }
-
-        // Nếu là Weapon → trang bị
-        if (item is Weapon weapon)
-        {
-            EquipWeapon(weapon);
-            equippedItemIndex = index;
-        }
-        else if (item is Buff buff && buff.Type == BuffType.Active)
-        {
-            item.Activate(this); // Dùng buff
-
-            itemSlots[index] = null; // Dùng xong thì mất
-            if (itemUI != null)
-                itemUI.ClearItemSlot(index);
-
-            equippedItemIndex = -1;
-        }
+        // Kích hoạt item tại ô slot index (buff active hoặc weapon attack)
     }
-
-    private void UnequipWeapon()
-    {
-        if (currentWeapon != null)
-        {
-            Destroy(currentWeapon);
-            currentWeapon = null;
-        }
-    }
-
 
     public void ApplyDamage(float damage)
     {
         if (isInvincible) return;
 
-        float actualDamage = damage * (1f - damageReductionPercent);
-        currentHealth -= actualDamage;
+        currentHealth -= damage;
+        Debug.Log($"{playerType} bị mất {damage} máu → còn lại: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -266,22 +209,12 @@ public class PlayerController : MonoBehaviour
         //GameManager.Instance.OnPlayerDead(playerType);
     }
 
-    public bool AddItem(Item newItem)
+    public void AddItem(Item newItem)
     {
-        for (int i = 0; i < itemSlots.Count; i++)
-        {
-            if (itemSlots[i] == null)
-            {
-                itemSlots[i] = newItem;
-                if (itemUI != null)
-                    itemUI.SetItemIcon(i, newItem.icon);
-                return true;
-            }
-        }
+        if (itemSlots.Count >= 3) return;
 
-        // Nếu tất cả slot đều đang full → không thêm được
-        Debug.Log($"{playerType}: Không còn slot trống để thêm item.");
-        return false;
+        itemSlots.Add(newItem);
+        // Cập nhật UI nếu có
     }
 
     public void SetPvPMode(bool value)
@@ -307,56 +240,11 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (currentWeapon != null)
-        {
-            Weapon weapon = itemSlots[equippedItemIndex] as Weapon;
-
-            Animator weaponAnimator = currentWeapon.GetComponent<Animator>();
-            if (weaponAnimator != null && weapon != null && !string.IsNullOrEmpty(weapon.weaponAnimatorTrigger))
-            {
-                weaponAnimator.SetTrigger(weapon.weaponAnimatorTrigger);
-            }
-
-            // Nếu là súng thì bắn
-            if (weapon.name.Contains("Gun"))
-            {
-                FireBullet(weapon);
-            }
-            else
-            {
-                weapon.Activate(this);
-            }
-        }
-        else
-        {
-            animationController.PlayAttackAnimation();
-        }
-
+        // Nếu có vũ khí đang chọn → gọi Activate()
+        // Nếu không → chơi animation đánh tay không
+        animationController.PlayAttackAnimation();
         Debug.Log($"{playerType} attacked!");
     }
-
-    private void FireBullet(Weapon weapon)
-    {
-        if (bulletPrefab == null) return;
-
-        Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-
-        // Tìm điểm bắn từ trong vũ khí đang cầm
-        Transform shootPoint = currentWeapon.transform.Find("ShootPoint");
-
-        Vector3 spawnPos = shootPoint != null ? shootPoint.position : weaponHolder.position;
-
-        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDirection(direction);
-
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bulletScript != null)
-        {
-            bulletScript.SetDirection(direction);
-            bulletScript.SetOwner(this, weapon.damage);
-        }
-
-        }
 
     private void TryPickUp()
     {
@@ -365,11 +253,9 @@ public class PlayerController : MonoBehaviour
         if (nearbyItem.CompareTag("weapon"))
         {
             Weapon weapon = nearbyItem.GetComponent<WeaponPickup>().GetWeapon();
-            if (AddItem(weapon)) // chỉ xóa nếu nhặt thành công
-            {
-                Destroy(nearbyItem);
-                nearbyItem = null;
-            }
+            AddItem(weapon);
+            Destroy(nearbyItem);
+            nearbyItem = null;
         }
         else if (nearbyItem.CompareTag("buff"))
         {
@@ -377,24 +263,23 @@ public class PlayerController : MonoBehaviour
 
             if (buff.Type == BuffType.Passive)
             {
-                AddPassiveBuff(buff);
-                Destroy(nearbyItem);
-                nearbyItem = null;
+                AddPassiveBuff(buff); // nếu có hệ thống passive buff
+
             }
             else
             {
-                if (AddItem(buff)) //chỉ xóa nếu nhặt thành công
-                {
-                    Destroy(nearbyItem);
-                    nearbyItem = null;
-                }
+                AddItem(buff); // nếu là buff active
             }
+
+            Destroy(nearbyItem);
+            nearbyItem = null;
         }
     }
 
-
     private void AddPassiveBuff(Buff buff)
     {
+        passiveBuffs.Add(buff);
+
         switch (buff.effectType)
         {
             case BuffEffectType.IncreaseMaxHealth:
@@ -419,15 +304,23 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
     }
 
+
     private void UseDashSkill()
     {
         Debug.Log($"{playerType} đang sử dụng Dash Skill...");
+        
+        // Check if dashing is allowed (Fire Stream disables dash)
+        if (!canDash)
+        {
+            Debug.Log($"{playerType} cannot dash while using Fire Stream!");
+            return;
+        }
+        
         // Gọi dash skill (sau này có thể set cooldown, distance...)
         if (isDashing || Time.time < lastDashTime + dashCooldown) return;
 
         isDashing = true;
         lastDashTime = Time.time;
-
 
         Vector2 dashDirection = (playerType == PlayerType.Player1) ?
             new Vector2(Input.GetAxis("Horizontal"), 0).normalized :
@@ -450,34 +343,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"{playerType} used Unique Skill!");
     }
 
-    public void EquipWeapon(Weapon weapon)
-    {
-
-        // Xóa vũ khí cũ nếu có
-        if (currentWeapon != null)
-        {
-            Destroy(currentWeapon);
-        }
-
-        if (weapon != null && weapon.weaponPrefab != null)
-        {
-            // Tạo vũ khí mới tại vị trí WeaponHolder
-            currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
-            currentWeapon.transform.localScale = Vector3.one * 5f;
-            currentWeapon.transform.localPosition = Vector3.zero;
-
-            WeaponHitbox hitbox = currentWeapon.GetComponentInChildren<WeaponHitbox>();
-            if (hitbox != null)
-            {
-                hitbox.SetOwner(this, weapon.damage);
-            }
-        }
-
-    }
-
     public PlayerType GetPlayerType() => playerType;
-
-    
 
     public void ApplyTrapEffect(TrapData trapData)
     {
@@ -589,48 +455,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetInvincible(bool value)
-    {
-        isInvincible = value;
-    }
-
-
-    public void ActivateLifeSteal(float percent, float duration)
-    {
-        if (isLifeStealing) return;
-
-        StartCoroutine(LifeStealCoroutine(percent, duration));
-    }
-
-    private IEnumerator LifeStealCoroutine(float percent, float duration)
-    {
-        isLifeStealing = true;
-        lifeStealPercent = percent;
-
-        yield return new WaitForSeconds(duration);
-
-        isLifeStealing = false;
-        lifeStealPercent = 0f;
-    }
-
-    public void ActivateShield(float percent, float duration)
-    {
-        StartCoroutine(ShieldCoroutine(percent, duration));
-    }
-
-    private IEnumerator ShieldCoroutine(float percent, float duration)
-    {
-        damageReductionPercent = percent;
-
-        yield return new WaitForSeconds(duration);
-
-        damageReductionPercent = 0f;
-    }
-
-    public void SetPlayerType(PlayerType type)
-    {
-        playerType = type;
-    }    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
+    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
     {
         speedModifiers[source] = multiplier;
         RecalculateSpeed();
@@ -660,5 +485,16 @@ public class PlayerController : MonoBehaviour
     public void UpdateMoveSpeed(float newSpeed)
     {
         moveSpeed = newSpeed;
+    }
+
+    public void SetCanDash(bool value)
+    {
+        canDash = value;
+        Debug.Log($"{playerType} dash ability set to: {value}");
+    }
+
+    public bool CanDash()
+    {
+        return canDash;
     }
 }
