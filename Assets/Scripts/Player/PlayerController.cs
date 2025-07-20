@@ -53,7 +53,9 @@ public class PlayerController : MonoBehaviour
 
     private GameObject nearbyItem = null;
 
-    [SerializeField] private float jumpForce = 300f;
+    [SerializeField] private float jumpForce = 350f;
+
+    private bool isGrounded = false;
 
 
     void Start()
@@ -143,6 +145,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (!isGrounded) return;
+
         // Chỉ nhảy nếu đang chạm đất (tuỳ bạn muốn kiểm tra bằng Raycast hay Trigger)
         animationController.PlayJumpAnimation();
         rb.AddForce(Vector2.up * jumpForce);
@@ -405,5 +409,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
 }
