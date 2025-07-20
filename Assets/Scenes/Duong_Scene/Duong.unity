@@ -1235,7 +1235,6 @@ MonoBehaviour:
   player1Skills: []
   player2Image: {fileID: 710144162}
   player2Skills: []
-  playerPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
   player1SpawnPoint: {fileID: 50189075}
   player2SpawnPoint: {fileID: 643495135}
 --- !u!4 &1939377242

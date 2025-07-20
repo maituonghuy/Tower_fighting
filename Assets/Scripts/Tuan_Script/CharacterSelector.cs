@@ -9,6 +9,7 @@ public class CharacterSelector : MonoBehaviour
         public string characterName;
         public Sprite characterSprite;
         public Sprite[] skillSprites;
+        public GameObject characterPrefab;
     }
 
     public CharacterData[] characters;
@@ -40,7 +41,8 @@ public class CharacterSelector : MonoBehaviour
         {
             characterName = characters[index].characterName,
             characterSprite = characters[index].characterSprite,
-            skillSprites = characters[index].skillSprites
+            skillSprites = characters[index].skillSprites,
+            characterPrefab = characters[index].characterPrefab
         };
 
         if (gameObject.name.Contains("Player1"))
