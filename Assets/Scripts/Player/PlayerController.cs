@@ -426,6 +426,31 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"{playerType} used Unique Skill!");
     }
 
+    public void EquipWeapon(Weapon weapon)
+    {
+
+        // Xóa vũ khí cũ nếu có
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon);
+        }
+
+        if (weapon != null && weapon.weaponPrefab != null)
+        {
+            // Tạo vũ khí mới tại vị trí WeaponHolder
+            currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
+            currentWeapon.transform.localScale = Vector3.one * 3f;
+            currentWeapon.transform.localPosition = Vector3.zero;
+
+            WeaponHitbox hitbox = currentWeapon.GetComponentInChildren<WeaponHitbox>();
+            if (hitbox != null)
+            {
+                hitbox.SetOwner(this, weapon.damage);
+            }
+        }
+
+    }
+
     public PlayerType GetPlayerType() => playerType;
 
     public void ApplyTrapEffect(TrapData trapData)

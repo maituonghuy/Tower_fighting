@@ -13,6 +13,7 @@ public class WeaponHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (owner != null) return;
         var target = other.GetComponent<PlayerController>();
         if (target != null && target != owner)
         {

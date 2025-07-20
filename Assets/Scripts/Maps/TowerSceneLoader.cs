@@ -10,7 +10,6 @@ public class TowerSceneLoader : MonoBehaviour
     public Image player2Image;
     public Image[] player2Skills;
 
-    public GameObject playerPrefab;
     public Transform player1SpawnPoint;
     public Transform player2SpawnPoint;
 
@@ -18,28 +17,9 @@ public class TowerSceneLoader : MonoBehaviour
     {
         var data = CharacterSelectionData.Instance;
 
-        // ⬇️ UI hiển thị hình (đoạn bạn đã có)
-        player1Image.sprite = data.player1Character.characterSprite;
-        //for (int i = 0; i < player1Skills.Length; i++)
-        //{
-        //    if (i < data.player1Character.skillSprites.Length)
-        //        player1Skills[i].sprite = data.player1Character.skillSprites[i];
-        //}
-
-        //player2Image.sprite = data.player2Character.characterSprite;
-        //for (int i = 0; i < player2Skills.Length; i++)
-        //{
-        //    if (i < data.player2Character.skillSprites.Length)
-        //        player2Skills[i].sprite = data.player2Character.skillSprites[i];
-        //}
-
         // ⬇️ THÊM: Instantiate player thật vào scene
-        GameObject p1 = Instantiate(playerPrefab, player1SpawnPoint.position, Quaternion.identity);
-        GameObject p2 = Instantiate(playerPrefab, player2SpawnPoint.position, Quaternion.identity);
-
-        // Đổi sprite của nhân vật dựa trên nhân vật đã chọn
-        p1.GetComponentInChildren<SpriteRenderer>().sprite = data.player1Character.characterSprite;
-        p2.GetComponentInChildren<SpriteRenderer>().sprite = data.player2Character.characterSprite;
+        GameObject p1 = Instantiate(data.player1Character.characterPrefab, player1SpawnPoint.position, Quaternion.identity);
+        GameObject p2 = Instantiate(data.player2Character.characterPrefab, player2SpawnPoint.position, Quaternion.identity);
 
         // Gán PlayerType để phân biệt điều khiển
         p1.GetComponent<PlayerController>().SetPlayerType(PlayerType.Player1);
