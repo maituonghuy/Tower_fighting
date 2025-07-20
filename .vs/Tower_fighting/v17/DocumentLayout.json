@@ -3,48 +3,16 @@
   "WorkspaceRootPath": "D:\\TowerFighting\\Tower_fighting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Maps\\DeathTrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:3:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:3:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\maps\\climbcameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\climbcameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Maps\\DeathTrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\maps\\spikefollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\spikefollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\maps\\maploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\maploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\towerfighting\\tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\maps\\mapdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\mapdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\maps\\maptype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\maptype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TowerFighting\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -903,23 +871,10 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T03:59:20.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "DeathTrigger.cs",
-              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\DeathTrigger.cs",
-              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
               "RelativeToolTip": "Assets\\Scripts\\Maps\\DeathTrigger.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAmwAgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -963,43 +918,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DeathTrigger.cs",
-              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\DeathTrigger.cs",
-              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Maps\\DeathTrigger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAxwO8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T22:04:39.407Z"
+              "WhenOpened": "2025-07-02T03:59:20.386Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MapData.cs",
-              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\MapData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MapData.cs",
-              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\MapData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Maps\\MapData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T22:03:13.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MapType.cs",
-              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\MapType.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MapType.cs",
-              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Maps\\MapType.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Maps\\MapType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T22:02:28.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "PlayerAnimationController.cs",
               "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
@@ -1011,11 +943,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "Buff.cs",
-              "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Buff.cs",
-              "ToolTip": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
               "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Buff.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1023,7 +955,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "Item.cs",
               "DocumentMoniker": "D:\\TowerFighting\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Item.cs",
