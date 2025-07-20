@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1114191654084032539}
   - component: {fileID: 4768351993253852571}
   - component: {fileID: 998686518515447794}
+  - component: {fileID: -5265132959846659104}
   m_Layer: 0
   m_Name: Gun
   m_TagString: weapon
@@ -61,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.81, y: -10.42, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3213768753248052461}
@@ -169,7 +170,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0025502741, y: -0.0047969967}
+  m_Offset: {x: 0.08249968, y: -0.01735235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.39958757, y: 0.5870242}
@@ -179,7 +180,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.34879333, y: 0.23903671}
+  m_Size: {x: 0.7876885, y: 0.31799144}
   m_EdgeRadius: 0
 --- !u!95 &998686518515447794
 Animator:
@@ -203,3 +204,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5265132959846659104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567002669326963354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c233b2dfa6496594d8753cc9f056c6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

@@ -329,7 +329,14 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
         bullet.GetComponent<Bullet>().SetDirection(direction);
 
-    }
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.SetDirection(direction);
+            bulletScript.SetOwner(this, weapon.damage);
+        }
+
+        }
 
     private void TryPickUp()
     {
@@ -420,13 +427,21 @@ public class PlayerController : MonoBehaviour
         {
             // Tạo vũ khí mới tại vị trí WeaponHolder
             currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
-            currentWeapon.transform.localScale = Vector3.one * 3f;
+            currentWeapon.transform.localScale = Vector3.one * 5f;
             currentWeapon.transform.localPosition = Vector3.zero;
+
+            WeaponHitbox hitbox = currentWeapon.GetComponentInChildren<WeaponHitbox>();
+            if (hitbox != null)
+            {
+                hitbox.SetOwner(this, weapon.damage);
+            }
         }
 
     }
 
     public PlayerType GetPlayerType() => playerType;
+
+    
 
     public void ApplyTrapEffect(TrapData trapData)
     {
@@ -576,4 +591,8 @@ public class PlayerController : MonoBehaviour
         damageReductionPercent = 0f;
     }
 
+    public void SetPlayerType(PlayerType type)
+    {
+        playerType = type;
+    }
 }

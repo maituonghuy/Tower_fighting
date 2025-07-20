@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "D:\\ProjectPRU\\Tower_fighting\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\tuan_script\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tuan_script\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\tuan_script\\readybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tuan_script\\readybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\uiscript\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uiscript\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\buffpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -867,44 +891,116 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Weapon.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "MainMenuManager.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Tuan_Script\\MainMenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tuan_Script\\MainMenuManager.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Tuan_Script\\MainMenuManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tuan_Script\\MainMenuManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T15:19:07.323Z",
+              "WhenOpened": "2025-07-20T08:53:21.47Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ReadyButton.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Tuan_Script\\ReadyButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tuan_Script\\ReadyButton.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Tuan_Script\\ReadyButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tuan_Script\\ReadyButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T08:52:21.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeaponHitbox.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T08:33:20.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UIController.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\UIScript\\UIController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIScript\\UIController.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\UIScript\\UIController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIScript\\UIController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T08:09:25.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Item.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T07:55:21.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Bullet.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA+wC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T13:52:04.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Weapon.cs",
+              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
+              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T15:19:07.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
               "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ViewState": "AgIAAGYBAAAAAAAAAAAQwIUBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADsCAAAAAAAAAAAswFACAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T04:05:31.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T04:05:31.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "PlayerAnimationController.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T15:42:06.614Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "WeaponPickup.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
@@ -916,7 +1012,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "BuffPickup.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
@@ -928,7 +1024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Buff.cs",
               "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Buff.cs",
