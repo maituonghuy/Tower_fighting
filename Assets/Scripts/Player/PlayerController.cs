@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
     private bool isDashing = false;
+    private bool canDash = true;
     private float lastDashTime = -10f; // Initialize to allow first dash immediately
 
     // Speed modifier system
@@ -423,7 +424,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log($"{playerType} đang sử dụng Dash Skill...");
         // Gọi dash skill (sau này có thể set cooldown, distance...)
-        if (isDashing || Time.time < lastDashTime + dashCooldown) return;
+        if (!canDash || isDashing || Time.time < lastDashTime + dashCooldown) return;
 
         isDashing = true;
         lastDashTime = Time.time;
@@ -665,5 +666,16 @@ public class PlayerController : MonoBehaviour
     public void UpdateMoveSpeed(float newSpeed)
     {
         moveSpeed = newSpeed;
+    }
+
+    // Dash control methods
+    public void SetCanDash(bool value)
+    {
+        canDash = value;
+    }
+
+    public bool CanDash()
+    {
+        return canDash;
     }
 }

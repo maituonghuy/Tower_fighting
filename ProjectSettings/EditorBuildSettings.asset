@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tuan_Scene/CharacterSelect.unity
     guid: b7f200cb3d4881a418f7b210b6203d90
   - enabled: 1
-    path: Assets/Scenes/Duong.unity
+    path: Assets/Scenes/Duong_Scene/Duong.unity
     guid: 552ca0ed23bf95545b2c2dfe75fbe94c
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
