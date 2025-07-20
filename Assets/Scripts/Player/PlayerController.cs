@@ -631,10 +631,11 @@ public class PlayerController : MonoBehaviour
         damageReductionPercent = 0f;
     }
 
-    public void SetPlayerType(PlayerType type)
-    {
-        playerType = type;
-    }    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
+    //public void SetPlayerType(PlayerType type)
+    //{
+    //    playerType = type;
+    //}  
+    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
     {
         speedModifiers[source] = multiplier;
         RecalculateSpeed();
