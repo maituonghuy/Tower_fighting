@@ -34,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 5.63, y: -1.25, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5540985596287978094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5717719090714312182
@@ -188,8 +189,8 @@ MonoBehaviour:
   passiveBuffs: []
   activeTrapEffects: []
   isPvP: 0
-  weaponHolder: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  weaponHolder: {fileID: 5540985596287978094}
+  bulletPrefab: {fileID: 2672903004340318782, guid: 905f7b5d4db28124bba389ac09f6ad46, type: 3}
   jumpForce: 300
   itemUI: {fileID: 0}
   dashForce: 50
@@ -230,3 +231,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2359622804028090798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5540985596287978094}
+  m_Layer: 0
+  m_Name: WeaponHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5540985596287978094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2359622804028090798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.23, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2842347744387155829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

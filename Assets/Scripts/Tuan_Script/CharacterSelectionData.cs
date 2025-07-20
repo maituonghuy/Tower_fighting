@@ -6,6 +6,7 @@ public class SelectedCharacterData
     public string characterName;
     public Sprite characterSprite;
     public Sprite[] skillSprites;
+    public GameObject characterPrefab;
 }
 
 public class CharacterSelectionData : MonoBehaviour
