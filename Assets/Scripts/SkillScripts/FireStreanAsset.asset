@@ -22,7 +22,7 @@ MonoBehaviour:
   damagePerTick: 5
   tickInterval: 0.2
   knockbackForce: 200
-  fireStreamPrefab: {fileID: 0}
+  fireStreamPrefab: {fileID: 5024913908248455018, guid: 93f5bd98550ea53dbbda37733921f616, type: 3}
   affectedLayers:
     serializedVersion: 2
     m_Bits: 4294967295
