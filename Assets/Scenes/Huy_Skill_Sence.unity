@@ -256,8 +256,74 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &283862278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9587548
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4059311
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4498
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710002419112007436, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438128191855523110, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: skills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438128191855523110, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: 'skills.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 69ad98e97f796b793a3135bdeed2c8ea, type: 2}
+    - target: {fileID: 3206440068314054666, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
+      propertyPath: m_Name
+      value: Player 1_HuyTest
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0b0e5a8bf47edfe0b19b184ab6381a1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 193342637}
+  - {fileID: 283862278}
