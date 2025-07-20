@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 3206440068314054666}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0106, y: -1.1795, z: -2.4498}
+  m_LocalPosition: {x: -3.03, y: 2.08, z: -2}
   m_LocalScale: {x: 0.31147847, y: 0.3265872, z: 0.69948}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -100,6 +100,7 @@ MonoBehaviour:
   dashForce: 50
   dashDuration: 0.2
   dashCooldown: 1
+  stunDuration: 0.4
 --- !u!114 &5009020537451007144
 MonoBehaviour:
   m_ObjectHideFlags: 0

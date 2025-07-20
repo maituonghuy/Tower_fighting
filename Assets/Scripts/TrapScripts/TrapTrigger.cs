@@ -6,7 +6,7 @@ public class TrapTrigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") && !other.CompareTag("dragon")) return;
 
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
