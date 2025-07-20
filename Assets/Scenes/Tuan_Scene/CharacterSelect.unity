@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.1
+  m_fontSize: 69.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2053,21 +2053,25 @@ MonoBehaviour:
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -5794280630382045305, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: Scarlet
     characterSprite: {fileID: 5351708609430724204, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -3087880778217750092, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: Shadow
     characterSprite: {fileID: 6494218633340668182, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 875946876819185120, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: Frosty
     characterSprite: {fileID: -7517256858135843231, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: -8761483511772326392, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
+    characterPrefab: {fileID: 0}
   displayCharacterImage: {fileID: 1388129573}
   skillImages:
   - {fileID: 371193689}
@@ -2258,24 +2262,29 @@ MonoBehaviour:
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -2703249703063247693, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: Scarlet
     characterSprite: {fileID: -3150131467861657401, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 5351708609430724204, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: -7390066592427920868, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: Shadow
     characterSprite: {fileID: -3172869925008137835, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: -5422976349051264599, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     - {fileID: 1980740879560390139, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: Frosty
     characterSprite: {fileID: -3087880778217750092, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
     skillSprites:
     - {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
     - {fileID: -9072972012384533964, guid: 222499a0dd0e3514aaa58b076edee529, type: 3}
+    characterPrefab: {fileID: 0}
   - characterName: 
     characterSprite: {fileID: 0}
     skillSprites: []
+    characterPrefab: {fileID: 0}
   displayCharacterImage: {fileID: 226883121}
   skillImages:
   - {fileID: 1442590440}
@@ -2508,7 +2517,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.7
+  m_fontSize: 64.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4060,10 +4069,12 @@ MonoBehaviour:
     characterName: 
     characterSprite: {fileID: 0}
     skillSprites: []
+    characterPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
   player2Character:
     characterName: 
     characterSprite: {fileID: 0}
     skillSprites: []
+    characterPrefab: {fileID: 3206440068314054666, guid: 25815a6a44359fe4cb8c02c0d2986d4c, type: 3}
 --- !u!4 &1484525118
 Transform:
   m_ObjectHideFlags: 0

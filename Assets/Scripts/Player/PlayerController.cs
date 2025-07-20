@@ -49,6 +49,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isPvP = false;
     private bool isInvincible = false;
 
+    [SerializeField] private Transform weaponHolder;
+    private GameObject currentWeapon;
+    private int equippedItemIndex = -1; // -1 nghĩa là không cầm gì
+
+    [SerializeField] private GameObject bulletPrefab;
+
+    private bool isAttacking = false;
+
     private PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
@@ -240,11 +248,86 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        // Nếu có vũ khí đang chọn → gọi Activate()
-        // Nếu không → chơi animation đánh tay không
-        animationController.PlayAttackAnimation();
+        if (isAttacking) return; // Ngăn spam khi đang đánh
+
+        isAttacking = true;
+
+        if (currentWeapon != null)
+        {
+            Weapon weapon = itemSlots[equippedItemIndex] as Weapon;
+
+            Animator weaponAnimator = currentWeapon.GetComponent<Animator>();
+            if (weaponAnimator != null && weapon != null && !string.IsNullOrEmpty(weapon.weaponAnimatorTrigger))
+            {
+                weaponAnimator.SetTrigger(weapon.weaponAnimatorTrigger);
+
+                // ⭐ Tính thời gian anim clip để reset
+                float clipLength = GetAnimationClipLength(weaponAnimator, weapon.weaponAnimatorTrigger);
+                Invoke(nameof(ResetAttackState), clipLength);
+            }
+
+            if (weapon.name.Contains("Gun"))
+            {
+                FireBullet(weapon);
+            }
+            else
+            {
+                weapon.Activate(this);
+            }
+        }
+        else
+        {
+            animationController.PlayAttackAnimation();
+            // Reset sau khi anim thường xong (giả sử 0.5s)
+            Invoke(nameof(ResetAttackState), 0.5f);
+        }
+
         Debug.Log($"{playerType} attacked!");
     }
+
+    private float GetAnimationClipLength(Animator animator, string triggerName)
+    {
+        // Giả định clip đầu tiên có tên đúng là clip của trigger
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == triggerName)
+            {
+                return clip.length;
+            }
+        }
+
+        // Nếu không tìm thấy → fallback tạm
+        return 0.5f;
+    }
+
+    private void ResetAttackState()
+    {
+        isAttacking = false;
+    }
+
+
+    private void FireBullet(Weapon weapon)
+    {
+        if (bulletPrefab == null) return;
+
+        Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+
+        // Tìm điểm bắn từ trong vũ khí đang cầm
+        Transform shootPoint = currentWeapon.transform.Find("ShootPoint");
+
+        Vector3 spawnPos = shootPoint != null ? shootPoint.position : weaponHolder.position;
+
+        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        bullet.GetComponent<Bullet>().SetDirection(direction);
+
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.SetDirection(direction);
+            bulletScript.SetOwner(this, weapon.damage);
+        }
+
+        }
 
     private void TryPickUp()
     {
