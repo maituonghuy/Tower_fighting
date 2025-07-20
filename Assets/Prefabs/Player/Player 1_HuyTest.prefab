@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 9103761759111487096}
   - component: {fileID: 5759863898885446275}
   - component: {fileID: 3008501169100738369}
+  - component: {fileID: 1438128191855523110}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 1_HuyTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,6 +62,9 @@ MonoBehaviour:
   activeTrapEffects: []
   isPvP: 0
   jumpForce: 300
+  dashForce: 1000
+  dashDuration: 0.2
+  dashCooldown: 1
 --- !u!114 &5009020537451007144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +227,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1438128191855523110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206440068314054666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47ceeb733dc2af4cb2ee08880d3c182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 11400000, guid: 69ad98e97f796b793a3135bdeed2c8ea, type: 2}

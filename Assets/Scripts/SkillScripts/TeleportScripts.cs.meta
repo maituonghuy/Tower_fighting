@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ebc327bd80f1beaefba901ea10a1dfc8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - icon: {instanceID: 0}
+  - animation: {instanceID: 0}
+  - teleportMarkPrefab: {fileID: 3506026525169898052, guid: e64c07488fc0b02b5b4be3521131ecea, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -55,6 +55,17 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float jumpForce = 300f;
 
+    [Header("Dash Settings")]
+    [SerializeField] private float dashForce = 50f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    private bool isDashing = false;
+    private float lastDashTime = -10f; // Initialize to allow first dash immediately
+
+    // Speed modifier system
+    private Dictionary<string, float> speedModifiers = new Dictionary<string, float>();
+    private float baseSpeed;
+
 
     void Start()
     {
@@ -62,6 +73,8 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         animationController = GetComponent<PlayerAnimationController>();
         currentHealth = maxHealth;
+
+        InitializeSpeedManager();
     }
 
     void Update()
@@ -69,6 +82,12 @@ public class PlayerController : MonoBehaviour
         if (!isStunned)
             HandleMovement();
         HandleSkillInput();
+    }
+
+    private void InitializeSpeedManager()
+    {
+        baseSpeed = moveSpeed;
+        speedModifiers.Clear();
     }
 
     private void HandleMovement()
@@ -126,7 +145,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha3)) UseItem(1);
             if (Input.GetKeyDown(KeyCode.Alpha4)) UseItem(2);
             if (Input.GetKeyDown(KeyCode.S)) TryPickUp();
-            if (Input.GetKeyDown(KeyCode.Alpha5)) UseDashSkill();      // Dash: 5
+            if (UnityEngine.InputSystem.Keyboard.current.zKey.wasReleasedThisFrame) UseDashSkill();      // Dash: 5
             if (Input.GetKeyDown(KeyCode.Alpha6)) UseUniqueSkill();    // Unique: 6
         }
         else if (playerType == PlayerType.Player2)
@@ -136,7 +155,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M)) UseItem(1);
             if (Input.GetKeyDown(KeyCode.Comma)) UseItem(2);
             if (Input.GetKeyDown(KeyCode.DownArrow)) TryPickUp();
-            if (Input.GetKeyDown(KeyCode.Period)) UseDashSkill();      // Dash: .
+            if (UnityEngine.InputSystem.Keyboard.current.mKey.wasReleasedThisFrame) UseDashSkill();      // Dash: .
             if (Input.GetKeyDown(KeyCode.Slash)) UseUniqueSkill();     // Unique: /
         }
     }
@@ -152,6 +171,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleSkillInput()
     {
+        //Trigger SkillExecutor
         // Gọi dash hoặc unique skill tùy theo input
     }
 
@@ -284,8 +304,27 @@ public class PlayerController : MonoBehaviour
 
     private void UseDashSkill()
     {
+        Debug.Log($"{playerType} đang sử dụng Dash Skill...");
         // Gọi dash skill (sau này có thể set cooldown, distance...)
+        if (isDashing || Time.time < lastDashTime + dashCooldown) return;
+
+        isDashing = true;
+        lastDashTime = Time.time;
+
+
+        Vector2 dashDirection = (playerType == PlayerType.Player1) ?
+            new Vector2(Input.GetAxis("Horizontal"), 0).normalized :
+            new Vector2(Input.GetAxis("Horizontal_P2"), 0).normalized;
+
+        rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
+
+        Invoke(nameof(ResetDash), dashDuration);
         Debug.Log($"{playerType} used Dash Skill!");
+    }
+
+    private void ResetDash()
+    {
+        isDashing = false;
     }
 
     private void UseUniqueSkill()
@@ -406,5 +445,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
+    {
+        speedModifiers[source] = multiplier;
+        RecalculateSpeed();
+        Debug.Log($"Applied speed modifier '{source}': {multiplier}x to {playerType}");
+    }
 
+    public void RemoveSpeedModifier(string source)
+    {
+        if (speedModifiers.ContainsKey(source))
+        {
+            speedModifiers.Remove(source);
+            RecalculateSpeed();
+            Debug.Log($"Removed speed modifier '{source}' from {playerType}");
+        }
+    }
+
+    private void RecalculateSpeed()
+    {
+        float newSpeed = baseSpeed;
+        foreach (var modifier in speedModifiers.Values)
+        {
+            newSpeed *= modifier;
+        }
+        moveSpeed = newSpeed;
+    }
+
+    public void UpdateMoveSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 }
