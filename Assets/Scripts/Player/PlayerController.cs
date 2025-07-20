@@ -57,11 +57,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private PlayerAnimationController animationController;
+    protected PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
 
-    [SerializeField] private float jumpForce = 300f;
+    [SerializeField] private float jumpForce = 350f;
+
+    private bool isGrounded = false;
+    private bool isStunnedByAttack = false;
 
     //Buff Active hút máu
     private bool isLifeStealing = false;
@@ -84,6 +87,9 @@ public class PlayerController : MonoBehaviour
     private Dictionary<string, float> speedModifiers = new Dictionary<string, float>();
     private float baseSpeed;
 
+    [SerializeField] private float stunDuration = 0.4f;
+
+
 
     void Start()
     {
@@ -102,9 +108,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isStunned)
+        if (!isStunnedByAttack)
+        {
             HandleMovement();
-        HandleSkillInput();
+            HandleSkillInput();
+        }
     }
 
     private void InitializeSpeedManager()
@@ -113,9 +121,9 @@ public class PlayerController : MonoBehaviour
         speedModifiers.Clear();
     }
 
-    private void HandleMovement()
+    protected virtual void HandleMovement()
     {
-        if (isStunned) return;
+        if (isStunned || isStunnedByAttack) return;
 
         float moveX = 0f;
 
@@ -185,6 +193,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (!isGrounded) return;
+
         // Chỉ nhảy nếu đang chạm đất (tuỳ bạn muốn kiểm tra bằng Raycast hay Trigger)
         animationController.PlayJumpAnimation();
         rb.AddForce(Vector2.up * jumpForce);
@@ -243,6 +253,7 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
+
         if (isInvincible) return;
 
         float actualDamage = damage * (1f - damageReductionPercent);
@@ -251,10 +262,14 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            return;
         }
 
+        StartCoroutine(StunCoroutineByAttack(stunDuration));
         isInvincible = true;
-        Invoke(nameof(ResetInvincibility), 1.5f);
+        Invoke(nameof(ResetInvincibility), 0.4f);
+        
+
     }
 
     private void ResetInvincibility()
@@ -306,7 +321,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
         if (currentWeapon != null)
         {
@@ -328,11 +343,6 @@ public class PlayerController : MonoBehaviour
                 weapon.Activate(this);
             }
         }
-        else
-        {
-            animationController.PlayAttackAnimation();
-        }
-
         Debug.Log($"{playerType} attacked!");
     }
 
@@ -357,11 +367,11 @@ public class PlayerController : MonoBehaviour
             bulletScript.SetOwner(this, weapon.damage);
         }
 
-        }
+    }
 
     private void TryPickUp()
     {
-        if (nearbyItem == null) return;
+        if (nearbyItem == null || gameObject.CompareTag("dragon")) return;
 
         if (nearbyItem.CompareTag("weapon"))
         {
@@ -478,7 +488,7 @@ public class PlayerController : MonoBehaviour
 
     public PlayerType GetPlayerType() => playerType;
 
-    
+
 
     public void ApplyTrapEffect(TrapData trapData)
     {
@@ -596,7 +606,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetInvincible(bool value)
     {
-        isInvincible = value;
+        //isInvincible = value;
     }
 
 
@@ -649,6 +659,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
     private void RecalculateSpeed()
     {
         float newSpeed = baseSpeed;
@@ -674,4 +699,17 @@ public class PlayerController : MonoBehaviour
     {
         return canDash;
     }
+
+    private IEnumerator StunCoroutineByAttack(float duration)
+    {
+        isStunnedByAttack = true;
+        animationController.PlayStunAnimation();
+
+        yield return new WaitForSeconds(duration);
+
+        isStunnedByAttack = false;
+    }
+
+
+
 }

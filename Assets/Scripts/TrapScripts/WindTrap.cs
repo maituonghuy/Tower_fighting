@@ -6,7 +6,7 @@ public class WindTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") && !other.CompareTag("dragon")) return;
 
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb != null && trapData.effectType == TrapEffectType.Push)
