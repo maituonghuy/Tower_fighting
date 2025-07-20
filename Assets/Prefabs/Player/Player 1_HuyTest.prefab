@@ -61,7 +61,10 @@ MonoBehaviour:
   passiveBuffs: []
   activeTrapEffects: []
   isPvP: 0
+  weaponHolder: {fileID: 0}
+  bulletPrefab: {fileID: 0}
   jumpForce: 300
+  itemUI: {fileID: 0}
   dashForce: 1000
   dashDuration: 0.2
   dashCooldown: 1
@@ -142,7 +145,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.54, y: 3.7}
+    oldSize: {x: 4.34, y: 4.52}
     newSize: {x: 2.54, y: 3.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -194,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -539561598073820502, guid: 9b1ae832fa0cedb40a45ef84c3dea765, type: 3}
+  m_Sprite: {fileID: 4954345118388884524, guid: f03eb07f13e62c542aa768550508326f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

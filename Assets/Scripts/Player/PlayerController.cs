@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab;
 
-
+    private bool isAttacking = false;
 
     private PlayerAnimationController animationController;
 
@@ -307,6 +307,10 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
+        if (isAttacking) return; // Ngăn spam khi đang đánh
+
+        isAttacking = true;
+
         if (currentWeapon != null)
         {
             Weapon weapon = itemSlots[equippedItemIndex] as Weapon;
@@ -315,9 +319,12 @@ public class PlayerController : MonoBehaviour
             if (weaponAnimator != null && weapon != null && !string.IsNullOrEmpty(weapon.weaponAnimatorTrigger))
             {
                 weaponAnimator.SetTrigger(weapon.weaponAnimatorTrigger);
+
+                // ⭐ Tính thời gian anim clip để reset
+                float clipLength = GetAnimationClipLength(weaponAnimator, weapon.weaponAnimatorTrigger);
+                Invoke(nameof(ResetAttackState), clipLength);
             }
 
-            // Nếu là súng thì bắn
             if (weapon.name.Contains("Gun"))
             {
                 FireBullet(weapon);
@@ -330,10 +337,33 @@ public class PlayerController : MonoBehaviour
         else
         {
             animationController.PlayAttackAnimation();
+            // Reset sau khi anim thường xong (giả sử 0.5s)
+            Invoke(nameof(ResetAttackState), 0.5f);
         }
 
         Debug.Log($"{playerType} attacked!");
     }
+
+    private float GetAnimationClipLength(Animator animator, string triggerName)
+    {
+        // Giả định clip đầu tiên có tên đúng là clip của trigger
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == triggerName)
+            {
+                return clip.length;
+            }
+        }
+
+        // Nếu không tìm thấy → fallback tạm
+        return 0.5f;
+    }
+
+    private void ResetAttackState()
+    {
+        isAttacking = false;
+    }
+
 
     private void FireBullet(Weapon weapon)
     {
