@@ -38,4 +38,9 @@ public class PlayerAnimationController : MonoBehaviour
     {
         animator.SetTrigger("death");
     }
+
+    public void PlayStunAnimation()
+    {
+        animator.SetTrigger("stunByAttack");
+    }
 }

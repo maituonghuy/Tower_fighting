@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3206440068314054666}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -2.02, z: -2}
+  m_LocalPosition: {x: -3.03, y: 2.08, z: -2}
   m_LocalScale: {x: 0.31147847, y: 0.3265872, z: 0.69948}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61,6 +61,11 @@ MonoBehaviour:
   activeTrapEffects: []
   isPvP: 0
   jumpForce: 300
+  itemUI: {fileID: 0}
+  dashForce: 50
+  dashDuration: 0.2
+  dashCooldown: 1
+  stunDuration: 0.4
 --- !u!114 &5009020537451007144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +139,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.101909876, y: 0.25449938}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,7 +149,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2290058, y: 1.7449273}
   m_EdgeRadius: 0
 --- !u!212 &5759863898885446275
 SpriteRenderer:
