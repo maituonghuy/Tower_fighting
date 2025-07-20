@@ -32,9 +32,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.03, y: 2.08, z: -2}
-  m_LocalScale: {x: 0.31147847, y: 0.3265872, z: 0.69948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6462264931662951064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7817049687104999635
@@ -60,6 +61,8 @@ MonoBehaviour:
   passiveBuffs: []
   activeTrapEffects: []
   isPvP: 0
+  weaponHolder: {fileID: 6462264931662951064}
+  bulletPrefab: {fileID: 2672903004340318782, guid: 905f7b5d4db28124bba389ac09f6ad46, type: 3}
   jumpForce: 300
   itemUI: {fileID: 0}
   dashForce: 50
@@ -139,17 +142,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.101909876, y: 0.25449938}
+  m_Offset: {x: 0.009580255, y: 0.06984019}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3966668, y: 3.3733332}
+    oldSize: {x: 0.72571427, y: 1.0571429}
     newSize: {x: 2.54, y: 3.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2290058, y: 1.7449273}
+  m_Size: {x: 0.39920592, y: 0.50267935}
   m_EdgeRadius: 0
 --- !u!212 &5759863898885446275
 SpriteRenderer:
@@ -195,7 +198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3622196662205643961, guid: e7e2d32dea1f1564f978f3f446afa16a, type: 3}
+  m_Sprite: {fileID: -539561598073820502, guid: 9b1ae832fa0cedb40a45ef84c3dea765, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -228,3 +231,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &4139340860005364011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6462264931662951064}
+  m_Layer: 0
+  m_Name: WeaponHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6462264931662951064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139340860005364011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.23, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 710002419112007436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

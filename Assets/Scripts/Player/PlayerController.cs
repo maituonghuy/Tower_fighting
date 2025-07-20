@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private bool isStunnedByAttack = false;
+    private bool isAttacking = false;
 
     //Buff Active hút máu
     private bool isLifeStealing = false;
@@ -323,6 +324,10 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Attack()
     {
+        if (isAttacking) return;
+
+        StartCoroutine(AttackDelayCoroutine());
+
         if (currentWeapon != null)
         {
             Weapon weapon = itemSlots[equippedItemIndex] as Weapon;
@@ -344,6 +349,16 @@ public class PlayerController : MonoBehaviour
             }
         }
         Debug.Log($"{playerType} attacked!");
+    }
+
+    private IEnumerator AttackDelayCoroutine()
+    {
+        isAttacking = true;
+
+        // Delay = thời gian tấn công của animation (ví dụ 0.7 giây)
+        yield return new WaitForSeconds(0.7f);
+
+        isAttacking = false;
     }
 
     private void FireBullet(Weapon weapon)
@@ -474,7 +489,7 @@ public class PlayerController : MonoBehaviour
         {
             // Tạo vũ khí mới tại vị trí WeaponHolder
             currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
-            currentWeapon.transform.localScale = Vector3.one * 3f;
+            currentWeapon.transform.localScale = Vector3.one * 1.5f;
             currentWeapon.transform.localPosition = Vector3.zero;
 
             WeaponHitbox hitbox = currentWeapon.GetComponentInChildren<WeaponHitbox>();
