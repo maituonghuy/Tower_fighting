@@ -7,7 +7,7 @@ public class FireStreamSkill : Skill
 {
     [Header("Fire Stream Settings")]
     [SerializeField] private float streamDuration = 3f;
-    [SerializeField] private float streamRange = 4f; // 3-4 player widths
+    [SerializeField] private float streamRange = 2f; // Reduced from 4f to 2f - adjust as needed
     [SerializeField] private float streamWidth = 1.5f;
     [SerializeField] private float damagePerTick = 5f;
     [SerializeField] private float tickInterval = 0.2f;
@@ -20,6 +20,9 @@ public class FireStreamSkill : Skill
     [SerializeField] private GameObject fireStreamPrefab;
     [SerializeField] private LayerMask affectedLayers = -1;
     [SerializeField] private bool debugMode = true;
+    [SerializeField] private bool showRangeInScene = true; // Show range indicator in Scene view
+    [SerializeField] private bool preserveAspectRatio = true; // Prevent image stretching
+    [SerializeField] private bool useOriginalSize = false; // Use prefab's original size instead of scaling
     
     private Dictionary<GameObject, FireStreamInstance> activeStreams = new Dictionary<GameObject, FireStreamInstance>();
 
@@ -62,15 +65,34 @@ public class FireStreamSkill : Skill
             
             streamInstance.fireVisual = Object.Instantiate(fireStreamPrefab, streamPosition, Quaternion.identity);
             
-            // Scale the fire stream to match range and width
-            streamInstance.fireVisual.transform.localScale = new Vector3(streamRange, streamWidth, 1f);
-            
-            // Flip the fire stream based on facing direction
-            if (streamInstance.facingDirection < 0)
+            // Apply scaling based on settings
+            if (useOriginalSize)
             {
-                Vector3 scale = streamInstance.fireVisual.transform.localScale;
-                scale.x *= -1;
-                streamInstance.fireVisual.transform.localScale = scale;
+                // Keep original prefab size, just flip direction
+                Vector3 originalScale = streamInstance.fireVisual.transform.localScale;
+                streamInstance.fireVisual.transform.localScale = new Vector3(
+                    Mathf.Abs(originalScale.x) * streamInstance.facingDirection, 
+                    originalScale.y, 
+                    originalScale.z
+                );
+            }
+            else if (preserveAspectRatio)
+            {
+                // Preserve aspect ratio - only scale to match range, keep original proportions
+                streamInstance.fireVisual.transform.localScale = new Vector3(
+                    streamRange * streamInstance.facingDirection, 
+                    streamRange, 
+                    1f
+                );
+            }
+            else
+            {
+                // Stretch to fit exact dimensions (old behavior)
+                streamInstance.fireVisual.transform.localScale = new Vector3(
+                    streamRange * streamInstance.facingDirection, 
+                    streamWidth, 
+                    1f
+                );
             }
             
             // Make the fire stream follow the player
@@ -152,9 +174,30 @@ public class FireStreamSkill : Skill
     {
         if (streamInstance.fireVisual == null) return;
 
-        // Update visual direction
-        Vector3 scale = streamInstance.fireVisual.transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * streamInstance.facingDirection;
+        // Update visual direction and scale based on settings
+        Vector3 scale;
+        
+        if (useOriginalSize)
+        {
+            // Keep original size, just update direction
+            Vector3 originalScale = streamInstance.fireVisual.transform.localScale;
+            scale = new Vector3(
+                Mathf.Abs(originalScale.x) * streamInstance.facingDirection, 
+                originalScale.y, 
+                originalScale.z
+            );
+        }
+        else if (preserveAspectRatio)
+        {
+            // Preserve aspect ratio
+            scale = new Vector3(streamRange * streamInstance.facingDirection, streamRange, 1f);
+        }
+        else
+        {
+            // Stretch to fit exact dimensions  
+            scale = new Vector3(streamRange * streamInstance.facingDirection, streamWidth, 1f);
+        }
+        
         streamInstance.fireVisual.transform.localScale = scale;
     }
 
@@ -255,11 +298,60 @@ public class FireStreamSkill : Skill
     // Gizmo for debugging in Scene view
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        // Show fire stream area with side offset
-        Vector3 sideOffset = new Vector3(fireOriginOffset.x, fireOriginOffset.y, 0f);
-        Vector3 forwardOffset = Vector3.right * (streamRange / 2f);
+        if (!showRangeInScene) return;
+        
+        // Draw fire stream range for both directions
+        DrawFireStreamRange(1f);  // Right direction
+        DrawFireStreamRange(-1f); // Left direction
+        
+        // Draw origin point
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(fireOriginOffset, 0.1f);
+    }
+    
+    private void DrawFireStreamRange(float facingDirection)
+    {
+        Gizmos.color = facingDirection > 0 ? Color.red : Color.blue;
+        
+        // Calculate fire stream area
+        Vector3 sideOffset = new Vector3(fireOriginOffset.x * facingDirection, fireOriginOffset.y, 0f);
+        Vector3 forwardOffset = Vector3.right * facingDirection * (streamRange / 2f);
         Vector3 center = sideOffset + forwardOffset;
+        
+        // Draw damage area
         Gizmos.DrawWireCube(center, new Vector3(streamRange, streamWidth, 0.1f));
+        
+        // Draw range line from player to end of stream
+        Vector3 startPos = sideOffset;
+        Vector3 endPos = sideOffset + Vector3.right * facingDirection * streamRange;
+        Gizmos.DrawLine(startPos, endPos);
+        
+        // Draw range text (if in editor)
+        #if UNITY_EDITOR
+        UnityEditor.Handles.color = Gizmos.color;
+        UnityEditor.Handles.Label(endPos + Vector3.up * 0.3f, $"Range: {streamRange}u");
+        #endif
+    }
+
+    // Runtime debug visualization
+    private void OnDrawGizmos()
+    {
+        if (!debugMode || !showRangeInScene) return;
+        
+        // Show active fire streams in play mode
+        foreach (var stream in activeStreams.Values)
+        {
+            if (stream.caster != null)
+            {
+                Gizmos.color = new Color(1f, 0.5f, 0f, 1f); // Orange color
+                
+                // Draw current fire stream area
+                Vector3 sideOffset = new Vector3(fireOriginOffset.x * stream.facingDirection, fireOriginOffset.y, 0f);
+                Vector3 forwardOffset = Vector3.right * stream.facingDirection * (streamRange / 2f);
+                Vector3 center = stream.caster.transform.position + sideOffset + forwardOffset;
+                
+                Gizmos.DrawWireCube(center, new Vector3(streamRange, streamWidth, 0.1f));
+            }
+        }
     }
 }

@@ -22,6 +22,7 @@ MonoBehaviour:
   damagePerTick: 5
   tickInterval: 0.2
   knockbackForce: 200
+  fireOriginOffset: {x: 4, y: 0.2}
   fireStreamPrefab: {fileID: 5024913908248455018, guid: 93f5bd98550ea53dbbda37733921f616, type: 3}
   affectedLayers:
     serializedVersion: 2
