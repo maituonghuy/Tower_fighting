@@ -459,6 +459,49 @@ public class PlayerController : MonoBehaviour
         this.playerType = type;
     }
 
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
+
+    public void ActivateLifeSteal(float percent, float duration)
+    {
+        if (isLifeStealing) return;
+
+        StartCoroutine(LifeStealCoroutine(percent, duration));
+    }
+
+    private IEnumerator LifeStealCoroutine(float percent, float duration)
+    {
+        isLifeStealing = true;
+        lifeStealPercent = percent;
+
+        yield return new WaitForSeconds(duration);
+
+        isLifeStealing = false;
+        lifeStealPercent = 0f;
+    }
+
+    public void ActivateShield(float percent, float duration)
+    {
+        StartCoroutine(ShieldCoroutine(percent, duration));
+    }
+
+    private IEnumerator ShieldCoroutine(float percent, float duration)
+    {
+        damageReductionPercent = percent;
+
+        yield return new WaitForSeconds(duration);
+
+        damageReductionPercent = 0f;
+    }
+
+    public void SetPlayerType(PlayerType type)
+    {
+        this.playerType = type;
+    }
+
     public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
     {
         speedModifiers[source] = multiplier;
