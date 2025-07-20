@@ -49,12 +49,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isPvP = false;
     private bool isInvincible = false;
 
+    [SerializeField] private Transform weaponHolder;
+    private GameObject currentWeapon;
+    private int equippedItemIndex = -1; // -1 nghĩa là không cầm gì
+
+    [SerializeField] private GameObject bulletPrefab;
+
+
+
     private PlayerAnimationController animationController;
 
     private GameObject nearbyItem = null;
 
     [SerializeField] private float jumpForce = 300f;
 
+    //Buff Active hút máu
+    private bool isLifeStealing = false;
+    private float lifeStealPercent = 0f;
+
+    //shield Active
+    private float damageReductionPercent = 0f;
+
+    //UI
+    public UIController itemUI;
     [Header("Dash Settings")]
     [SerializeField] private float dashForce = 50f;
     [SerializeField] private float dashDuration = 0.2f;
@@ -73,6 +90,11 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         animationController = GetComponent<PlayerAnimationController>();
         currentHealth = maxHealth;
+
+        while (itemSlots.Count < 3)
+        {
+            itemSlots.Add(null);
+        }
 
         InitializeSpeedManager();
     }
@@ -177,15 +199,53 @@ public class PlayerController : MonoBehaviour
 
     public void UseItem(int index)
     {
-        // Kích hoạt item tại ô slot index (buff active hoặc weapon attack)
+        if (index < 0 || index >= itemSlots.Count) return;
+
+        Item item = itemSlots[index];
+        if (item == null) return;
+
+        // Nếu đang cầm chính item này → bỏ xuống
+        if (equippedItemIndex == index)
+        {
+            UnequipWeapon(); // Xóa vũ khí khỏi tay
+            equippedItemIndex = -1;
+            return;
+        }
+
+        // Nếu là Weapon → trang bị
+        if (item is Weapon weapon)
+        {
+            EquipWeapon(weapon);
+            equippedItemIndex = index;
+        }
+        else if (item is Buff buff && buff.Type == BuffType.Active)
+        {
+            item.Activate(this); // Dùng buff
+
+            itemSlots[index] = null; // Dùng xong thì mất
+            if (itemUI != null)
+                itemUI.ClearItemSlot(index);
+
+            equippedItemIndex = -1;
+        }
     }
+
+    private void UnequipWeapon()
+    {
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon);
+            currentWeapon = null;
+        }
+    }
+
 
     public void ApplyDamage(float damage)
     {
         if (isInvincible) return;
 
-        currentHealth -= damage;
-        Debug.Log($"{playerType} bị mất {damage} máu → còn lại: {currentHealth}");
+        float actualDamage = damage * (1f - damageReductionPercent);
+        currentHealth -= actualDamage;
 
         if (currentHealth <= 0)
         {
@@ -206,12 +266,22 @@ public class PlayerController : MonoBehaviour
         //GameManager.Instance.OnPlayerDead(playerType);
     }
 
-    public void AddItem(Item newItem)
+    public bool AddItem(Item newItem)
     {
-        if (itemSlots.Count >= 3) return;
+        for (int i = 0; i < itemSlots.Count; i++)
+        {
+            if (itemSlots[i] == null)
+            {
+                itemSlots[i] = newItem;
+                if (itemUI != null)
+                    itemUI.SetItemIcon(i, newItem.icon);
+                return true;
+            }
+        }
 
-        itemSlots.Add(newItem);
-        // Cập nhật UI nếu có
+        // Nếu tất cả slot đều đang full → không thêm được
+        Debug.Log($"{playerType}: Không còn slot trống để thêm item.");
+        return false;
     }
 
     public void SetPvPMode(bool value)
@@ -237,11 +307,56 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        // Nếu có vũ khí đang chọn → gọi Activate()
-        // Nếu không → chơi animation đánh tay không
-        animationController.PlayAttackAnimation();
+        if (currentWeapon != null)
+        {
+            Weapon weapon = itemSlots[equippedItemIndex] as Weapon;
+
+            Animator weaponAnimator = currentWeapon.GetComponent<Animator>();
+            if (weaponAnimator != null && weapon != null && !string.IsNullOrEmpty(weapon.weaponAnimatorTrigger))
+            {
+                weaponAnimator.SetTrigger(weapon.weaponAnimatorTrigger);
+            }
+
+            // Nếu là súng thì bắn
+            if (weapon.name.Contains("Gun"))
+            {
+                FireBullet(weapon);
+            }
+            else
+            {
+                weapon.Activate(this);
+            }
+        }
+        else
+        {
+            animationController.PlayAttackAnimation();
+        }
+
         Debug.Log($"{playerType} attacked!");
     }
+
+    private void FireBullet(Weapon weapon)
+    {
+        if (bulletPrefab == null) return;
+
+        Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+
+        // Tìm điểm bắn từ trong vũ khí đang cầm
+        Transform shootPoint = currentWeapon.transform.Find("ShootPoint");
+
+        Vector3 spawnPos = shootPoint != null ? shootPoint.position : weaponHolder.position;
+
+        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        bullet.GetComponent<Bullet>().SetDirection(direction);
+
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.SetDirection(direction);
+            bulletScript.SetOwner(this, weapon.damage);
+        }
+
+        }
 
     private void TryPickUp()
     {
@@ -250,9 +365,11 @@ public class PlayerController : MonoBehaviour
         if (nearbyItem.CompareTag("weapon"))
         {
             Weapon weapon = nearbyItem.GetComponent<WeaponPickup>().GetWeapon();
-            AddItem(weapon);
-            Destroy(nearbyItem);
-            nearbyItem = null;
+            if (AddItem(weapon)) // chỉ xóa nếu nhặt thành công
+            {
+                Destroy(nearbyItem);
+                nearbyItem = null;
+            }
         }
         else if (nearbyItem.CompareTag("buff"))
         {
@@ -260,18 +377,21 @@ public class PlayerController : MonoBehaviour
 
             if (buff.Type == BuffType.Passive)
             {
-                AddPassiveBuff(buff); // nếu có hệ thống passive buff
-
+                AddPassiveBuff(buff);
+                Destroy(nearbyItem);
+                nearbyItem = null;
             }
             else
             {
-                AddItem(buff); // nếu là buff active
+                if (AddItem(buff)) //chỉ xóa nếu nhặt thành công
+                {
+                    Destroy(nearbyItem);
+                    nearbyItem = null;
+                }
             }
-
-            Destroy(nearbyItem);
-            nearbyItem = null;
         }
     }
+
 
     private void AddPassiveBuff(Buff buff)
     {
@@ -330,7 +450,34 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"{playerType} used Unique Skill!");
     }
 
+    public void EquipWeapon(Weapon weapon)
+    {
+
+        // Xóa vũ khí cũ nếu có
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon);
+        }
+
+        if (weapon != null && weapon.weaponPrefab != null)
+        {
+            // Tạo vũ khí mới tại vị trí WeaponHolder
+            currentWeapon = Instantiate(weapon.weaponPrefab, weaponHolder);
+            currentWeapon.transform.localScale = Vector3.one * 5f;
+            currentWeapon.transform.localPosition = Vector3.zero;
+
+            WeaponHitbox hitbox = currentWeapon.GetComponentInChildren<WeaponHitbox>();
+            if (hitbox != null)
+            {
+                hitbox.SetOwner(this, weapon.damage);
+            }
+        }
+
+    }
+
     public PlayerType GetPlayerType() => playerType;
+
+    
 
     public void ApplyTrapEffect(TrapData trapData)
     {
@@ -442,7 +589,48 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
+
+    public void ActivateLifeSteal(float percent, float duration)
+    {
+        if (isLifeStealing) return;
+
+        StartCoroutine(LifeStealCoroutine(percent, duration));
+    }
+
+    private IEnumerator LifeStealCoroutine(float percent, float duration)
+    {
+        isLifeStealing = true;
+        lifeStealPercent = percent;
+
+        yield return new WaitForSeconds(duration);
+
+        isLifeStealing = false;
+        lifeStealPercent = 0f;
+    }
+
+    public void ActivateShield(float percent, float duration)
+    {
+        StartCoroutine(ShieldCoroutine(percent, duration));
+    }
+
+    private IEnumerator ShieldCoroutine(float percent, float duration)
+    {
+        damageReductionPercent = percent;
+
+        yield return new WaitForSeconds(duration);
+
+        damageReductionPercent = 0f;
+    }
+
+    public void SetPlayerType(PlayerType type)
+    {
+        playerType = type;
+    }    public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
     {
         speedModifiers[source] = multiplier;
         RecalculateSpeed();
