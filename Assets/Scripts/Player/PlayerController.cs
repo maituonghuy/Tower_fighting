@@ -275,19 +275,6 @@ public class PlayerController : MonoBehaviour
 
     private void AddPassiveBuff(Buff buff)
     {
-        case BuffEffectType.IncreaseMaxHealth:
-            maxHealth += buff.effectValue;
-            break;
-
-        case BuffEffectType.IncreaseDamage:
-            baseDamage += buff.effectValue;
-            currentDamage = baseDamage;
-            break;
-
-        case BuffEffectType.IncreaseMoveSpeed:
-            moveSpeed += buff.effectValue;
-            break;
-    }
         switch (buff.effectType)
         {
             case BuffEffectType.IncreaseMaxHealth:
@@ -311,7 +298,6 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
     }
-
 
     private void UseDashSkill()
     {
