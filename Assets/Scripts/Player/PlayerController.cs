@@ -193,8 +193,6 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (!isGrounded) return;
-
         // Chỉ nhảy nếu đang chạm đất (tuỳ bạn muốn kiểm tra bằng Raycast hay Trigger)
         animationController.PlayJumpAnimation();
         rb.AddForce(Vector2.up * jumpForce);
@@ -415,6 +413,7 @@ public class PlayerController : MonoBehaviour
         {
             case BuffEffectType.IncreaseMaxHealth:
                 maxHealth += buff.effectValue;
+                currentHealth += buff.effectValue; // có thể cộng ngay HP nếu muốn
                 break;
 
             case BuffEffectType.IncreaseDamage:
@@ -433,8 +432,6 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log($"{playerType} nhận buff {buff.name}: {buff.effectType} +{buff.effectValue}");
     }
-
-
 
     private void UseDashSkill()
     {
@@ -648,10 +645,6 @@ public class PlayerController : MonoBehaviour
         damageReductionPercent = 0f;
     }
 
-    //public void SetPlayerType(PlayerType type)
-    //{
-    //    playerType = type;
-    //}  
     public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
     {
         speedModifiers[source] = multiplier;

@@ -6,9 +6,6 @@ TagManager:
   tags:
   - weapon
   - buff
-  - DeathZone
-  - dragon
-  - Ground
   layers:
   - Default
   - TransparentFX

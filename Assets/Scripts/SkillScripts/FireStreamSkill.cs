@@ -13,6 +13,9 @@ public class FireStreamSkill : Skill
     [SerializeField] private float tickInterval = 0.2f;
     [SerializeField] private float knockbackForce = 200f;
     
+    [Header("Positioning")]
+    [SerializeField] private Vector2 fireOriginOffset = new Vector2(0.3f, 0.2f); // X: side offset, Y: height offset
+    
     [Header("Visual Effects")]
     [SerializeField] private GameObject fireStreamPrefab;
     [SerializeField] private LayerMask affectedLayers = -1;
@@ -52,7 +55,11 @@ public class FireStreamSkill : Skill
         // Create visual fire stream if prefab exists
         if (fireStreamPrefab != null)
         {
-            Vector3 streamPosition = player.transform.position + Vector3.right * streamInstance.facingDirection * (streamRange / 2f);
+            // Calculate fire origin position (side of player + forward offset)
+            Vector3 sideOffset = new Vector3(fireOriginOffset.x * streamInstance.facingDirection, fireOriginOffset.y, 0f);
+            Vector3 forwardOffset = Vector3.right * streamInstance.facingDirection * (streamRange / 2f);
+            Vector3 streamPosition = player.transform.position + sideOffset + forwardOffset;
+            
             streamInstance.fireVisual = Object.Instantiate(fireStreamPrefab, streamPosition, Quaternion.identity);
             
             // Scale the fire stream to match range and width
@@ -132,8 +139,11 @@ public class FireStreamSkill : Skill
         // Update fire stream position to follow player
         if (streamInstance.fireVisual != null)
         {
-            Vector3 streamPosition = streamInstance.caster.transform.position + 
-                                   Vector3.right * streamInstance.facingDirection * (streamRange / 2f);
+            // Calculate fire origin position (side of player + forward offset)
+            Vector3 sideOffset = new Vector3(fireOriginOffset.x * streamInstance.facingDirection, fireOriginOffset.y, 0f);
+            Vector3 forwardOffset = Vector3.right * streamInstance.facingDirection * (streamRange / 2f);
+            Vector3 streamPosition = streamInstance.caster.transform.position + sideOffset + forwardOffset;
+            
             streamInstance.fireVisual.transform.position = streamPosition;
         }
     }
@@ -152,8 +162,10 @@ public class FireStreamSkill : Skill
     {
         if (streamInstance.caster == null) return;
 
-        Vector3 streamCenter = streamInstance.caster.transform.position + 
-                              Vector3.right * streamInstance.facingDirection * (streamRange / 2f);
+        // Calculate fire damage area position (same as visual)
+        Vector3 sideOffset = new Vector3(fireOriginOffset.x * streamInstance.facingDirection, fireOriginOffset.y, 0f);
+        Vector3 forwardOffset = Vector3.right * streamInstance.facingDirection * (streamRange / 2f);
+        Vector3 streamCenter = streamInstance.caster.transform.position + sideOffset + forwardOffset;
         
         // Create a box area for the fire stream
         Vector2 boxSize = new Vector2(streamRange, streamWidth);
@@ -244,7 +256,10 @@ public class FireStreamSkill : Skill
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Vector3 center = Vector3.right * (streamRange / 2f);
+        // Show fire stream area with side offset
+        Vector3 sideOffset = new Vector3(fireOriginOffset.x, fireOriginOffset.y, 0f);
+        Vector3 forwardOffset = Vector3.right * (streamRange / 2f);
+        Vector3 center = sideOffset + forwardOffset;
         Gizmos.DrawWireCube(center, new Vector3(streamRange, streamWidth, 0.1f));
     }
 }
