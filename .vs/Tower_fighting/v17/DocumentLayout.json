@@ -1,54 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\ProjectPRU\\Tower_fighting\\",
+  "WorkspaceRootPath": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\maps\\towersceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\towersceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|d:\\projectpru\\tower_fighting\\assets\\scripts\\tuan_script\\characterselectiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tuan_script\\characterselectiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|c:\\users\\olymp\\onedrive\\documents\\fpt\\semester7_fpt\\pru212-chilp\\tower_fighting\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\uiscript\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uiscript\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Library\\PackageCache\\com.unity.render-pipelines.universal@87d5294b44e1\\Runtime\\UniversalRenderPipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal@87d5294b44e1\\Runtime\\UniversalRenderPipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\trapscripts\\traptrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\trapscripts\\traptrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\weaponpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\buffpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\itemscripts\\buffpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\buffpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|D:\\ProjectPRU\\Tower_fighting\\assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\deathtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\deathtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\spikefollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\spikefollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\climbcameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\climbcameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\maploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\maploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\mapdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\mapdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\maptype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maps\\maptype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeranimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83EBF64A-D18A-05B7-0725-DC185A597DE3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemscripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\olymp\\onedrive\\documents\\fpt\\semester7_fpt\\pru212-chilp\\tower_fighting\\assets\\scripts\\maps\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\mapspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\mapspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\pkcameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\pkcameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\movingplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\movingplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\pushplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\pushplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\disappearplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\disappearplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\fallingplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\fallingplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\maps\\tileplatformspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\maps\\tileplatformspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\assets\\scripts\\tiles\\basictile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\tiles\\basictile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,8 +98,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 208,
+          "SelectedChildIndex": 210,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Test.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\Test.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\Test.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\Test.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\Test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T12:08:58.405Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
@@ -191,10 +244,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:23:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -850,6 +899,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:36:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
@@ -859,6 +912,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -891,150 +948,256 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CharacterSelectionData.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Tuan_Script\\CharacterSelectionData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tuan_Script\\CharacterSelectionData.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Tuan_Script\\CharacterSelectionData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tuan_Script\\CharacterSelectionData.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Title": "UniversalRenderPipeline.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Library\\PackageCache\\com.unity.render-pipelines.universal@87d5294b44e1\\Runtime\\UniversalRenderPipeline.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@87d5294b44e1\\Runtime\\UniversalRenderPipeline.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Library\\PackageCache\\com.unity.render-pipelines.universal@87d5294b44e1\\Runtime\\UniversalRenderPipeline.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal@87d5294b44e1\\Runtime\\UniversalRenderPipeline.cs",
+              "ViewState": "AgIAAGcDAAAAAAAAAAAcwHQDAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T09:00:22.994Z",
+              "WhenOpened": "2025-07-20T12:04:02.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TowerSceneLoader.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Maps\\TowerSceneLoader.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\TowerSceneLoader.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Maps\\TowerSceneLoader.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Maps\\TowerSceneLoader.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ViewState": "AgIAAFkCAAAAAAAAAAAwwHwCAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T08:55:33.229Z",
+              "WhenOpened": "2025-07-01T23:57:22.84Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MapSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MapSpawner.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\MapSpawner.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwBsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T22:38:50.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PKCameraController.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\PKCameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\PKCameraController.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\PKCameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\PKCameraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwDUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T11:48:15.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MovingPlatform.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MovingPlatform.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MovingPlatform.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MovingPlatform.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\MovingPlatform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T01:19:47.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PushPlatform.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\PushPlatform.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\PushPlatform.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\PushPlatform.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\PushPlatform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T01:20:53.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DisappearPlatform.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\DisappearPlatform.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\DisappearPlatform.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\DisappearPlatform.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\DisappearPlatform.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T01:21:03.332Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ViewState": "AgIAAEICAAAAAAAAAAAmwFYCAAAAAAAAAAAAAA==",
+              "Title": "TrapTrigger.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\TrapScripts\\TrapTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TrapScripts\\TrapTrigger.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\TrapScripts\\TrapTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TrapScripts\\TrapTrigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T04:05:31.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T00:46:38.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FallingPlatform.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\FallingPlatform.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\FallingPlatform.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\FallingPlatform.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\FallingPlatform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T00:01:30.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TilePlatformSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\TilePlatformSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\TilePlatformSpawner.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\TilePlatformSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\TilePlatformSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T23:57:42.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BasicTile.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Tiles\\BasicTile.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tiles\\BasicTile.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Tiles\\BasicTile.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tiles\\BasicTile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T23:39:35.197Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UIController.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\UIScript\\UIController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UIScript\\UIController.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\UIScript\\UIController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UIScript\\UIController.cs",
+              "Title": "BuffPickup.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T08:09:25.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WeaponHitbox.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\WeaponHitbox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T08:33:20.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Item.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Item.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Item.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T07:55:21.193Z"
+              "WhenOpened": "2025-07-14T00:46:52.059Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Bullet.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Bullet.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Bullet.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAA+wC0AAAAAAAAAAAAAAA==",
+              "Title": "DeathTrigger.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\DeathTrigger.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\DeathTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\DeathTrigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T13:52:04.228Z"
+              "WhenOpened": "2025-07-01T22:11:51.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpikeFollower.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\SpikeFollower.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\SpikeFollower.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\SpikeFollower.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\SpikeFollower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T22:10:59.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MapLoader.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapLoader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MapLoader.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapLoader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\MapLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T22:09:53.886Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Weapon.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Weapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Title": "ClimbCameraController.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\ClimbCameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\ClimbCameraController.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\ClimbCameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\ClimbCameraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T15:19:07.323Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PlayerAnimationController.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T15:42:06.614Z"
+              "WhenOpened": "2025-07-01T22:04:39.407Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "WeaponPickup.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\WeaponPickup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Title": "MapData.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MapData.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\MapData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T15:19:10.493Z"
+              "WhenOpened": "2025-07-01T22:03:13.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MapType.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapType.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Maps\\MapType.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Maps\\MapType.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Maps\\MapType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T22:02:28.539Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "BuffPickup.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\BuffPickup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Title": "PlayerAnimationController.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\Player\\PlayerAnimationController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAnimationController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAEwBIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T02:57:15.796Z"
+              "WhenOpened": "2025-07-01T15:19:01.935Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Buff.cs",
-              "DocumentMoniker": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Buff.cs",
-              "ToolTip": "D:\\ProjectPRU\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Buff.cs",
               "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Buff.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T03:52:13.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemScripts\\Item.cs",
+              "ToolTip": "C:\\Users\\olymp\\OneDrive\\Documents\\FPT\\SEMESTER7_FPT\\PRU212-ChiLP\\Tower_fighting\\Assets\\Scripts\\ItemScripts\\Item.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemScripts\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T03:50:59.112Z"
             }
           ]
         },
@@ -1097,7 +1260,7 @@
           ]
         },
         {
-          "DockedWidth": 1304,
+          "DockedWidth": 469,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -1183,6 +1346,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
