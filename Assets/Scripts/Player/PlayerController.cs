@@ -454,10 +454,10 @@ public class PlayerController : MonoBehaviour
             timer += interval;
         }
     }
-    // public void SetPlayerType(PlayerType type)
-    // {
-    //     this.playerType = type;
-    // }
+    public void SetPlayerType(PlayerType type)
+    {
+        this.playerType = type;
+    }
 
     public void ApplySpeedModifier(string source, float multiplier, float duration = -1f)
     {
