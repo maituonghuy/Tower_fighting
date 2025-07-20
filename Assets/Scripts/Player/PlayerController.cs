@@ -588,6 +588,10 @@ public class PlayerController : MonoBehaviour
             timer += interval;
         }
     }
+    public void SetPlayerType(PlayerType type)
+    {
+        this.playerType = type;
+    }
 
     public void SetInvincible(bool value)
     {

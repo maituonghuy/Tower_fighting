@@ -7,7 +7,6 @@ public class Death : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player died!");
-            Destroy(other.gameObject);
         }
     }
 }
