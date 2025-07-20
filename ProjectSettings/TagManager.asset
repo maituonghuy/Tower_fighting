@@ -6,6 +6,8 @@ TagManager:
   tags:
   - weapon
   - buff
+  - dragon
+  - Ground
   layers:
   - Default
   - TransparentFX
