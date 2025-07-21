@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8112391765511858904}
   - component: {fileID: 1292190556621941439}
   - component: {fileID: 6762037160824492080}
+  - component: {fileID: 893697916715142203}
   m_Layer: 0
   m_Name: CountrysideBoy
   m_TagString: Player
@@ -262,3 +263,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &893697916715142203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5464313582402559555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47ceeb733dc2af4cb2ee08880d3c182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 11400000, guid: 3e3494bc05ef4202397cd741989cb073, type: 2}
