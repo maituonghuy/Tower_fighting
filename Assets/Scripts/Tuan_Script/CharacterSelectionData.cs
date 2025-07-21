@@ -16,6 +16,9 @@ public class CharacterSelectionData : MonoBehaviour
     public SelectedCharacterData player1Character;
     public SelectedCharacterData player2Character;
 
+    public GameObject player1Instance;
+    public GameObject player2Instance;
+
     private void Awake()
     {
         // Singleton
@@ -38,5 +41,19 @@ public class CharacterSelectionData : MonoBehaviour
     public void SetPlayer2(SelectedCharacterData data)
     {
         player2Character = data;
+    }
+
+    public void RemoveDeadPlayer(PlayerController deadPlayer)
+    {
+        if (player1Instance == deadPlayer.gameObject)
+        {
+            Destroy(player1Instance);
+            player1Instance = null;
+        }
+        else if (player2Instance == deadPlayer.gameObject)
+        {
+            Destroy(player2Instance);
+            player2Instance = null;
+        }
     }
 }

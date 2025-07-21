@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using static UnityEditor.Progress;
+using UnityEngine.SceneManagement;
 
 public enum PlayerType { Player1, Player2 }
 
@@ -311,6 +312,14 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("weapon") || other.CompareTag("buff"))
         {
             nearbyItem = other.gameObject;
+        }
+        else if (other.CompareTag("DeathZone"))
+        {
+            // ⬇️ Trừ hết máu ngay khi chạm DeathZone
+            ApplyDamage(maxHealth);
+
+            // Gọi GameManager hoặc tự xử lý chuyển scene
+            CheckDeathAndHandleScene();
         }
     }
 
@@ -725,6 +734,15 @@ public class PlayerController : MonoBehaviour
         isStunnedByAttack = false;
     }
 
+    private void CheckDeathAndHandleScene()
+    {
+        if (currentHealth <= 0)
+        {
+            // Hủy player đã chết để không xuất hiện ở Scene3
+            CharacterSelectionData.Instance.RemoveDeadPlayer(this);
 
-
+            // Kiểm tra nếu đã có ít nhất 1 người chết → chuyển luôn sang EndGameScene
+            SceneManager.LoadScene("EndGameScene");
+        }
+    }
 }
