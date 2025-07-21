@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class TowerSceneLoader : MonoBehaviour
@@ -27,5 +28,18 @@ public class TowerSceneLoader : MonoBehaviour
 
         p1.GetComponent<PlayerController>().itemUI = GameObject.Find("Player1_UI").GetComponent<UIController>();
         p2.GetComponent<PlayerController>().itemUI = GameObject.Find("Player2_UI").GetComponent<UIController>();
+
+        data.player1Instance = p1;
+        data.player2Instance = p2;
+
+        DontDestroyOnLoad(p1);
+        DontDestroyOnLoad(p2);
+
+        //Invoke(nameof(GoToScene2), 10f);
+    }
+
+    public void GoToScene2()
+    {
+        SceneManager.LoadScene("EndGameScene");
     }
 }
