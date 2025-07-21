@@ -17,13 +17,15 @@ MonoBehaviour:
   icon: {fileID: 0}
   animation: {fileID: 0}
   gustDuration: 0.3
-  gustRange: 1.5
+  gustRange: 2
   gustWidth: 2
-  knockbackForce: 500
-  upwardForce: 200
-  windLifetime: 0.5
-  windOriginOffset: {x: 0.2, y: 0}
-  windGustPrefab: {fileID: 0}
+  knockbackForce: 4
+  upwardForce: 0.2
+  windLifetime: 3
+  travelDistance: 3
+  travelSpeed: 5
+  windOriginOffset: {x: 0.2, y: 1}
+  windGustPrefab: {fileID: 4900315666949125702, guid: d1174c25ec08cdefd95766972e718bfe, type: 3}
   affectedLayers:
     serializedVersion: 2
     m_Bits: 4294967295
