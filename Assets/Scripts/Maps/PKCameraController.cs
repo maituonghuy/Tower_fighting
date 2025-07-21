@@ -18,10 +18,22 @@ public class PKCameraController : MonoBehaviour
     {
         cam = GetComponent<Camera>();
 
-        // Kiểm tra xem camera có gắn tag MainCamera chưa (nếu dùng Camera.main ở nơi khác)
         if (cam == null)
         {
-            Debug.LogError("AnchorCameraController: Không tìm thấy Camera trên GameObject.");
+            Debug.LogError("PKCameraController: Không tìm thấy Camera trên GameObject.");
+        }
+
+        if (CharacterSelectionData.Instance != null)
+        {
+            if (player1 == null && CharacterSelectionData.Instance.player1Instance != null)
+            {
+                player1 = CharacterSelectionData.Instance.player1Instance.transform;
+            }
+
+            if (player2 == null && CharacterSelectionData.Instance.player2Instance != null)
+            {
+                player2 = CharacterSelectionData.Instance.player2Instance.transform;
+            }
         }
     }
 
@@ -36,16 +48,21 @@ public class PKCameraController : MonoBehaviour
 
     void MoveCamera()
     {
-        Vector3 centerPoint = GetCenterPoint();
-        Vector3 newPosition = new Vector3(centerPoint.x, centerPoint.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * smoothSpeed);
+
+            Vector3 centerPoint = GetCenterPoint();
+            Debug.Log("CenterPoint: " + centerPoint);
+
+            Vector3 newPosition = new Vector3(centerPoint.x, centerPoint.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * smoothSpeed);
+
+
     }
 
     void ZoomCamera()
     {
         float distance = Vector2.Distance(player1.position, player2.position);
-        float newSize = Mathf.Clamp(distance / zoomLimiter, minSize, maxSize);
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newSize, Time.deltaTime * smoothSpeed);
+        float targetSize = Mathf.Clamp(minSize + (distance / zoomLimiter), minSize, maxSize);
+        cam.orthographicSize = minSize;
     }
 
     Vector3 GetCenterPoint()
