@@ -9,25 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07e702a81b2eb59d89991ba7aeefcc9, type: 3}
-  m_Name: FireStreanAsset
+  m_Script: {fileID: 11500000, guid: 91d987139b35eb2499cd39d0398048d9, type: 3}
+  m_Name: WindGust
   m_EditorClassIdentifier: 
   skillName: 
   cooldown: 0
   icon: {fileID: 0}
   animation: {fileID: 0}
-  streamDuration: 3
-  streamRange: 2
-  streamWidth: 1.5
-  damagePerTick: 5
-  tickInterval: 0.2
-  knockbackForce: 1
-  fireOriginOffset: {x: 1, y: 0.2}
-  fireStreamPrefab: {fileID: 5024913908248455018, guid: 93f5bd98550ea53dbbda37733921f616, type: 3}
+  gustDuration: 0.3
+  gustRange: 2
+  gustWidth: 2
+  knockbackForce: 4
+  upwardForce: 0.2
+  windLifetime: 3
+  travelDistance: 3
+  travelSpeed: 5
+  windOriginOffset: {x: 0.2, y: 1}
+  windGustPrefab: {fileID: 4900315666949125702, guid: d1174c25ec08cdefd95766972e718bfe, type: 3}
   affectedLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   debugMode: 1
   showRangeInScene: 1
-  preserveAspectRatio: 1
-  useOriginalSize: 0
