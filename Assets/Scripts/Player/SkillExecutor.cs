@@ -8,6 +8,7 @@ public class SkillExecutor : MonoBehaviour
     [SerializeField] private List<Skill> skills;
     private Dictionary<Skill, float> cooldownTimer = new();
     private GameObject player;
+    private PlayerController playerController;
     
 
     void Start()
@@ -20,6 +21,13 @@ public class SkillExecutor : MonoBehaviour
         // Assign the GameObject this script is attached to as the player
         player = this.gameObject;
         
+        // Get the PlayerController component
+        playerController = GetComponent<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogError("SkillExecutor: PlayerController component not found!");
+        }
+        
         Debug.Log("Init skill cooldown successfully");
     }
 
@@ -27,38 +35,69 @@ public class SkillExecutor : MonoBehaviour
     {
         // Check if we have skills available
         if (skills == null || skills.Count == 0) return;
+        
+        // Check if playerController is available
+        if (playerController == null) return;
 
-        //Special skill (Time-Slow Bubble or Fire Stream - depends on what's assigned)
-        if (UnityEngine.InputSystem.Keyboard.current.eKey.wasReleasedThisFrame && skills.Count > 0 && !isOnCoolDown(skills[0]))
+        // Get current player type from PlayerController
+        PlayerType currentPlayerType = playerController.GetPlayerType();
+
+        // Handle input based on player type
+        bool activatePressed = false;
+        bool cancelPressed = false;
+
+        if (currentPlayerType == PlayerType.Player1)
         {
-            Debug.Log("Pre Activate special skill");
+            // Player Type 1: F to activate, G to cancel
+            activatePressed = UnityEngine.InputSystem.Keyboard.current.fKey.wasReleasedThisFrame;
+            cancelPressed = UnityEngine.InputSystem.Keyboard.current.gKey.wasReleasedThisFrame;
+        }
+        else if (currentPlayerType == PlayerType.Player2)
+        {
+            // Player Type 2: I to activate, P to cancel
+            activatePressed = UnityEngine.InputSystem.Keyboard.current.iKey.wasReleasedThisFrame;
+            cancelPressed = UnityEngine.InputSystem.Keyboard.current.pKey.wasReleasedThisFrame;
+        }
+
+        // Activate special skill
+        if (activatePressed && skills.Count > 0 && !isOnCoolDown(skills[0]))
+        {
+            Debug.Log($"Player {currentPlayerType}: Pre Activate special skill");
             skills[0].Activate(player, this);
-            Debug.Log("Activate special skill");
+            Debug.Log($"Player {currentPlayerType}: Activate special skill");
         }
         
-        //Cancel special skill
-        if (UnityEngine.InputSystem.Keyboard.current.qKey.wasReleasedThisFrame && skills.Count > 0)
+        // Cancel special skill
+        if (cancelPressed && skills.Count > 0)
         {
-            Debug.Log("Cancel special skill");
+            Debug.Log($"Player {currentPlayerType}: Cancel special skill");
             skills[0].Cancel(player, this);
         }
-
-        // Secondary skill (Dash, Teleport, etc. - depends on what's assigned)
-        if (UnityEngine.InputSystem.Keyboard.current.cKey.wasPressedThisFrame && skills.Count > 1 && !isOnCoolDown(skills[1]))
+    }
+    
+    public void SetPlayerType(PlayerType type)
+    {
+        if (playerController != null)
         {
-            Debug.Log("Pre Activate secondary skill");
-            skills[1].Activate(player, this);
-            Debug.Log("Activate secondary skill");
+            playerController.SetPlayerType(type);
+            Debug.Log($"SkillExecutor: Player type set to {type}");
         }
-
-        // Third skill slot (if needed)
-        if (UnityEngine.InputSystem.Keyboard.current.rKey.wasPressedThisFrame && skills.Count > 2 && !isOnCoolDown(skills[2]))
+        else
         {
-            Debug.Log("Pre Activate third skill");
-            skills[2].Activate(player, this);
-            Debug.Log("Activate third skill");
+            Debug.LogError("SkillExecutor: PlayerController not found, cannot set player type");
         }
     }
+
+    public PlayerType GetPlayerType()
+    {
+        if (playerController != null)
+        {
+            return playerController.GetPlayerType();
+        }
+        Debug.LogError("SkillExecutor: PlayerController not found, returning default Player1");
+        return PlayerType.Player1;
+    }
+
     public void StartCooldown(Skill skill)
     {
         cooldownTimer[skill] = Time.time + skill.cooldown;

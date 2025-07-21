@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1030273225231994736}
   - component: {fileID: 7169802567837365206}
   - component: {fileID: 7988391034739894177}
+  - component: {fileID: 5379899415333603433}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: dragon
@@ -234,6 +235,20 @@ MonoBehaviour:
   fireballPrefab: {fileID: 3363001410986266074, guid: c00ddc37d57ffaf428b230a3bcab69cf, type: 3}
   firePoint: {fileID: 2783761532832151559}
   fireballDelay: 0.75
+--- !u!114 &5379899415333603433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305107698038166677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47ceeb733dc2af4cb2ee08880d3c182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 11400000, guid: 5395e6db7b33c22ac9fa893fc3c81953, type: 2}
 --- !u!1 &8478444425063333009
 GameObject:
   m_ObjectHideFlags: 0
