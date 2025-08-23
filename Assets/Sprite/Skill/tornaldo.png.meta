@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 9987caf57ea25f08aa5718422019a933
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4768914203730473130
+    second: tornaldo_0
+  - first:
+      213: -3659175755150846980
+    second: tornaldo_1
+  - first:
+      213: -2932039048679992665
+    second: tornaldo_2
+  - first:
+      213: -4543667418016192884
+    second: tornaldo_3
+  - first:
+      213: -2403706358822825274
+    second: tornaldo_4
+  - first:
+      213: -8715071019120979510
+    second: tornaldo_5
+  - first:
+      213: -4271615286549252048
+    second: tornaldo_6
+  - first:
+      213: 3914163298138560185
+    second: tornaldo_7
+  - first:
+      213: 77890546559494751
+    second: tornaldo_8
+  - first:
+      213: -663403902219248821
+    second: tornaldo_9
+  - first:
+      213: 4998789695446645823
+    second: tornaldo_10
+  - first:
+      213: -1945284282755584809
+    second: tornaldo_11
+  - first:
+      213: -3013398143813205647
+    second: tornaldo_12
+  - first:
+      213: -1159124329486002441
+    second: tornaldo_13
+  - first:
+      213: 1526152159539916741
+    second: tornaldo_14
+  - first:
+      213: 1020671035849913574
+    second: tornaldo_15
+  - first:
+      213: -8861052530719052438
+    second: tornaldo_16
+  - first:
+      213: -7703995347696875193
+    second: tornaldo_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tornaldo_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 48
+        width: 676
+        height: 840
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b1d917aad1bc6f0800000000000000
+      internalID: -663403902219248821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7ede76fad88e4307d88151133b5cf0ca
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tornaldo_18: 1666010291
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

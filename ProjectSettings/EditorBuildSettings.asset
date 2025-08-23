@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tuan_Scene/StartGameScene.unity
+    guid: 0275f5878efcebe43a7402b87ebda523
+  - enabled: 1
+    path: Assets/Scenes/Tuan_Scene/CharacterSelect.unity
+    guid: b7f200cb3d4881a418f7b210b6203d90
+  - enabled: 1
+    path: Assets/Scenes/Duong_Scene/Duong.unity
+    guid: 552ca0ed23bf95545b2c2dfe75fbe94c
+  - enabled: 1
+    path: Assets/Scenes/Tuan_Scene/EndGameScene.unity
+    guid: 45148b106ed429a4798fc9dfc7832ba2
+  - enabled: 1
+    path: Assets/Scenes/LastScene/LastScene.unity
+    guid: 6b42d233e85f8d649874064a03481f95
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
